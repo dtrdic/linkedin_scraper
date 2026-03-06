@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>LinkedIn Lead Finder</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:40px;
+max-width:800px;
+}
+
+input{
+padding:10px;
+width:300px;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+}
+
+.lead{
+border:1px solid #ddd;
+padding:15px;
+margin-top:10px;
+}
+
+.hot{
+border-left:5px solid red;
+}
+
+#spinner{
+display:none;
+margin-top:20px;
+}
+
+.loader{
+border:6px solid #f3f3f3;
+border-top:6px solid #0073b1;
+border-radius:50%;
+width:40px;
+height:40px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+#progressBar{
+width:100%;
+background:#eee;
+margin-top:20px;
+height:25px;
+border-radius:5px;
+overflow:hidden;
+}
+
+#progressFill{
+height:100%;
+width:0%;
+background:#0073b1;
+transition:width 0.3s;
+}
+
+#status{
+margin-top:10px;
+color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>LinkedIn Codemagic Lead Finder</h1>
+
+<input id="queryInput" placeholder="Add search query"/>
+<button onclick="addQuery()">Add</button>
+
+<ul id="queries"></ul>
+
+<br>
+
+<button onclick="runScraper()">Start Scraping</button>
+<button onclick="stopScraper()">Stop</button>
+
+<div id="spinner">
+<div class="loader"></div>
+</div>
+
+<div id="progressBar">
+<div id="progressFill"></div>
+</div>
+
+<div id="status"></div>
+
+<div id="results"></div>
+
+<script>
+
+let queries = [];
+let progressInterval;
+
+function addQuery(){
+
+const input = document.getElementById("queryInput");
+
+if(!input.value) return;
+
+queries.push(input.value);
+
+const li = document.createElement("li");
+li.innerText = input.value;
+
+document.getElementById("queries").appendChild(li);
+
+input.value="";
+
+}
+
+async function runScraper(){
+
+document.getElementById("spinner").style.display="block";
+
+progressInterval = setInterval(updateProgress,1000);
+
+const res = await fetch("/run",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({queries})
+
+});
+
+const data = await res.json();
+
+clearInterval(progressInterval);
+
+document.getElementById("spinner").style.display="none";
+
+renderLeads(data.leads);
+
+}
+
+async function stopScraper(){
+
+await fetch("/stop",{method:"POST"});
+
+clearInterval(progressInterval);
+
+document.getElementById("spinner").style.display="none";
+
+document.getElementById("status").innerText="Stopped.";
+
+}
+
+async function updateProgress(){
+
+const res = await fetch("/progress");
+
+const p = await res.json();
+
+if(!p.running) return;
+
+const percent = Math.round((p.completed/p.total)*100);
+
+document.getElementById("progressFill").style.width =
+percent + "%";
+
+document.getElementById("status").innerText =
+`Searching: ${p.currentQuery} (${p.completed}/${p.total})`;
+
+}
+
+function renderLeads(leads){
+
+const container = document.getElementById("results");
+
+container.innerHTML="";
+
+leads.forEach(lead=>{
+
+const div = document.createElement("div");
+
+div.className="lead";
+
+if(lead.hotLead) div.classList.add("hot");
+
+div.innerHTML=`
+
+<b>${lead.author}</b> (${lead.company || ""})<br>
+${lead.leadReason}<br>
+<a href="${lead.profileUrl}" target="_blank">Open Profile</a>
+
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>

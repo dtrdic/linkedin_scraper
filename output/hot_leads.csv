@@ -1,0 +1,92 @@
+"author","company","headline","profileUrl","timestamp","searchQuery","stack","leadType","leadReason","hotLead","ciTool","ciComplaint","postText","isLead","jobSeeker"
+"","","16,631 followers
+16,631 followers","https://www.linkedin.com/company/bitrise/posts","3w • 
+ 
+3 weeks ago • Visible to anyone on or off LinkedIn","bitrise slow build","","CI Pain","Complaining about bitrise, github actions CI/CD issue: to all github actions users: we know you love your github tool, but we know running mobile builds on generic ci tools can be slow and painful",true,"bitrise, github actions","to all github actions users: we know you love your github tool, but we know running mobile builds on generic ci tools can be slow and painful","​​Fall in love with faster builds 💗
+
+To all GitHub Actions users: we know you love your GitHub tool, but we know running mobile builds on generic CI tools can be slow and painful. 
+
+That's why we’ve released Build Hub. ✨
+
+Get infrastructure optimized specifically for iOS & Android:
+
+– Up to 90% faster builds with M4 Pro & optional co-located caching
+– Same-day Xcode stack updates
+– Optimized cost-to-performance vs generic runners
+– Fully managed, zero maintenance
+
+No platform migration. No workflow changes. No retraining developers. 💌
+
+Just plug, play, and get all the warm and fuzzies: 🔗 https://bit.ly/46FUPgH
+
+
+hashtag
+#Bitrise 
+hashtag
+#BuildHub 
+hashtag
+#GitHubActions 
+hashtag
+#CICD 
+hashtag
+#iOS 
+hashtag
+#Linux
+…more",true,false
+"","","Indie app developer, content creator and iOS Engineer
+Indie app developer, content creator and iOS Engineer","https://www.linkedin.com/in/polpielladev?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABzHYRcBvxMn_5EaHtYjsGsXdWabPYITLuo","3mo • 
+ 
+3 months ago • Visible to anyone on or off LinkedIn","bitrise slow build","","CI Pain","Complaining about bitrise, github actions CI/CD issue: 🌟 this issue was kindly sponsored by bitrise",true,"bitrise, github actions","🌟 this issue was kindly sponsored by bitrise","Have you ever wondered how big companies automate their processes or what the process is to set up self-hosted GitHub Actions runners for your projects?
+
+👀 You might want to read my latest issue of the newsletter, featuring content from Alberto Salas, Back Market, Rightmove and more!
+
+🌟 This issue was kindly sponsored by Bitrise
+…more",true,false
+"","","Head of Solutions & Growth | Bridging the Gap between Business Needs & Technical Architecture | CRM & ERP Integration Expert
+Head of Solutions & Growth | Bridging the Gap between Business Needs & Technical Architecture | CRM & ERP Integration Expert","https://www.linkedin.com/in/edo-sagron?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACh_X4QBxKv5KYnK-8Q4XlUevWcrgBfxjVo","1yr • 
+ 
+1 year ago • Visible to anyone on or off LinkedIn","bitrise slow build","flutter","CI Pain","Complaining about bitrise, github actions CI/CD issue: , github actions, bitrise) to catch issues before deployment",true,"bitrise, github actions",", github actions, bitrise) to catch issues before deployment","Best Practices for Scalable App Development – Avoiding Technical Debt Early
+
+Scalability isn’t just about handling more users—it’s about building apps that grow without breaking. Too often, developers cut corners to ship fast, leading to technical debt that slows innovation and increases maintenance costs.
+
+Here’s how to avoid technical debt early and build apps that scale seamlessly:
+
+🔥 Best Practices for Scalable Development
+
+✅ Design for Scalability from Day One – Use modular architecture (e.g., microservices or feature-driven development) to keep your codebase clean and adaptable.
+
+✅ Prioritize Clean Code & Documentation – Future-proof your app with clear, maintainable code and proper documentation so teams can onboard quickly.
+
+✅ Use the Right State Management – In Flutter, choose between Riverpod, Bloc, or Provider depending on your app’s complexity. Poor state management can lead to performance bottlenecks.
+
+✅ Leverage Cloud-Native Solutions – Use Google Cloud, Firebase, or AWS Lambda to handle traffic spikes efficiently without over-provisioning servers.
+
+✅ Optimize Your Database – Choose a scalable database (e.g., Firestore, PostgreSQL, or Supabase) and avoid overusing real-time listeners that can drain performance.
+
+✅ Automate Testing & CI/CD – Implement unit, integration, and load testing early. Set up CI/CD pipelines (e.g., GitHub Actions, Bitrise) to catch issues before deployment.
+
+✅ Monitor Performance & Logs – Use Sentry, Firebase Performance Monitoring, or Datadog to track errors and optimize app speed in real time.
+
+
+---
+
+💡 The Key Takeaway? Build with scalability in mind from day one. A well-structured app saves time, money, and frustration as your user base grows.
+
+What’s your go-to strategy for scalable app development? Let’s discuss in the comments!
+
+
+hashtag
+#AppDevelopment 
+hashtag
+#Scalability 
+hashtag
+#TechnicalDebt 
+hashtag
+#SoftwareEngineering 
+hashtag
+#Flutter 
+hashtag
+#GoogleCloud 
+hashtag
+#DevOps
+…more",true,false

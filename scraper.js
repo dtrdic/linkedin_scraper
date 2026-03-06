@@ -2,106 +2,104 @@ const { chromium } = require("playwright");
 const fs = require("fs");
 const { Parser } = require("json2csv");
 
-const SEARCH_QUERIES = [
-  "flutter developer",
-  "react native developer",
-  "mobile ci/cd",
-  "ios build pipeline",
-  "android build pipeline",
-  "testflight deploy",
-  "fastlane ios",
-  "codepush react native",
-  "flutter build failed",
-  "react native build failed",
-  "ios ci pipeline",
-  "android ci pipeline",
-  "mobile devops",
-  "fastlane problem",
-  "bitrise problem",
-  "github actions ios",
-  "deploy ios app",
-  "deploy android app"
-];
+let stopRequested = false;
+
+function requestStop() {
+  stopRequested = true;
+}
 
 const MAX_POSTS_PER_QUERY = 100;
 
 const LEAD_KEYWORDS = [
   "react native",
   "flutter",
-  "mobile build",
   "ci/cd",
-  "continuous integration",
   "pipeline",
-  "build pipeline",
   "android build",
   "ios build",
   "fastlane",
   "github actions",
   "bitrise",
   "jenkins",
-  "circleci",
-  "deploy app",
+  "deploy",
   "testflight",
-  "play store deploy",
-  "codepush",
-  "ota update"
+  "play store",
+  "codepush"
 ];
 
-const CI_CD_PLATFORMS = ["bitrise", "github actions", "jenkins", "circleci", "app center", "buildkite", "azure devops", "gitlab ci", "teamcity"];
-const MOBILE_STACK = ["react native", "flutter", "kotlin", "swift", "expo"];
-const COMPLAINT_KEYWORDS = ["slow", "broken", "fail", "frustrating", "expensive", "buggy", "problem", "issue", "complain"];
-const HIRING_KEYWORDS = ["we're hiring", "we are hiring", "looking for", "join our team", "hiring flutter", "hiring react native", "hiring ios", "hiring android"];
-const QUESTION_KEYWORDS = ["ci", "pipeline", "deploy"];
+const CI_CD_PLATFORMS = [
+  "bitrise",
+  "github actions",
+  "jenkins",
+  "circleci",
+  "app center",
+  "buildkite",
+  "azure devops",
+  "gitlab ci"
+];
+
+const MOBILE_STACK = [
+  "react native",
+  "flutter",
+  "kotlin",
+  "swift",
+  "expo"
+];
+
+const COMPLAINT_KEYWORDS = [
+  "slow",
+  "broken",
+  "fail",
+  "failing",
+  "frustrating",
+  "expensive",
+  "buggy",
+  "problem",
+  "issue"
+];
+
+const JOB_SEEKING_KEYWORDS = [
+  "open to work",
+  "looking for a job",
+  "seeking opportunities",
+  "available for work"
+];
+
+const HIRING_KEYWORDS = [
+  "we're hiring",
+  "we are hiring",
+  "join our team",
+  "hiring flutter",
+  "hiring react native"
+];
 
 if (!fs.existsSync("output")) fs.mkdirSync("output");
 
-function parseNumber(str) {
-  if (!str) return 0;
-  str = str.replace(/,/g, '').toLowerCase();
-  if (str.includes("k")) return Math.round(parseFloat(str) * 1000);
-  if (str.includes("m")) return Math.round(parseFloat(str) * 1000000);
-  const num = parseInt(str.replace(/\D/g, ""));
-  return isNaN(num) ? 0 : num;
-}
-
 function detectLead(post) {
   const text = post.text.toLowerCase();
-  return LEAD_KEYWORDS.some(keyword => text.includes(keyword));
-}
-
-function scoreLead(post) {
-  let score = 0;
-  const text = post.text.toLowerCase();
-  if (text.includes("react native")) score += 5;
-  if (text.includes("flutter")) score += 5;
-  if (text.includes("ci")) score += 3;
-  if (text.includes("pipeline")) score += 3;
-  if (text.includes("build")) score += 3;
-  if (text.includes("deploy")) score += 2;
-  if (text.includes("testflight")) score += 3;
-  if (text.includes("codepush")) score += 4;
-
-  const likes = parseNumber(post.likes);
-  const comments = parseNumber(post.comments);
-  score += Math.min(likes / 20, 5);
-  score += Math.min(comments / 5, 5);
-
-  return Math.round(score);
+  return LEAD_KEYWORDS.some(k => text.includes(k));
 }
 
 function detectCIComplaint(post) {
   const text = post.text.toLowerCase();
-  const platformsMentioned = CI_CD_PLATFORMS.filter(platform => text.includes(platform));
-  const complaintMatches = COMPLAINT_KEYWORDS.filter(word => text.includes(word));
 
-  const isComplaint = platformsMentioned.length > 0 && complaintMatches.length > 0;
+  const platformsMentioned =
+    CI_CD_PLATFORMS.filter(p => text.includes(p));
+
+  const complaints =
+    COMPLAINT_KEYWORDS.filter(c => text.includes(c));
+
+  const isComplaint =
+    platformsMentioned.length > 0 &&
+    complaints.length > 0;
 
   let ciComplaintText = "";
+
   if (isComplaint) {
     const sentences = text.split(/[\.\n]/);
     const relevant = sentences.filter(s =>
-      CI_CD_PLATFORMS.some(p => s.includes(p)) &&
-      COMPLAINT_KEYWORDS.some(c => s.includes(c))
+      platformsMentioned.some(p => s.includes(p)) &&
+      complaints.some(c => s.includes(c))
     );
     ciComplaintText = relevant.join(". ").trim();
   }
@@ -109,35 +107,45 @@ function detectCIComplaint(post) {
   return { platformsMentioned, ciComplaintText };
 }
 
-function isPotentialCodemagicLead(post) {
-  return post.isLead && post.ciComplaints.platformsMentioned.length > 0;
-}
-
-function extractCompany(headline) {
-  if (!headline) return "";
-  const match = headline.match(/@ ([^|]+)/i) || headline.match(/at ([^|]+)/i);
-  return match ? match[1].trim() : "";
-}
-
 function detectHiring(post) {
   const text = post.text.toLowerCase();
   return HIRING_KEYWORDS.some(k => text.includes(k));
 }
 
-function detectQuestion(post) {
+function detectJobSeeker(post) {
+  const text = (post.text + " " + post.headline).toLowerCase();
+  return JOB_SEEKING_KEYWORDS.some(k => text.includes(k));
+}
+
+function detectStack(post) {
   const text = post.text.toLowerCase();
-  return text.includes("?") && QUESTION_KEYWORDS.some(k => text.includes(k));
+  return MOBILE_STACK.filter(s => text.includes(s));
 }
 
-function classifyLead({ ciComplaints, hiring, question, stack }) {
-  if (ciComplaints.platformsMentioned.length) return "CI Pain";
-  if (hiring) return "Hiring";
-  if (question) return "Question";
-  if (stack.length) return "Mobile Dev";
-  return "Other";
+function extractCompany(headline) {
+  if (!headline) return "";
+  const match =
+    headline.match(/@ ([^|]+)/i) ||
+    headline.match(/at ([^|]+)/i);
+  return match ? match[1].trim() : "";
 }
 
-(async () => {
+function generateLeadReason(post, ciComplaints, hiring) {
+  if (ciComplaints.ciComplaintText) {
+    return `CI complaint about ${ciComplaints.platformsMentioned.join(", ")}: ${ciComplaints.ciComplaintText}`;
+  }
+  if (ciComplaints.platformsMentioned.length) {
+    return `Mentions CI tool: ${ciComplaints.platformsMentioned.join(", ")}`;
+  }
+  if (hiring) {
+    return "Hiring mobile developers";
+  }
+  return "Mobile dev discussion";
+}
+
+async function runScraper(searchQueries, progress) {
+  stopRequested = false;
+
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
 
@@ -158,8 +166,13 @@ function classifyLead({ ciComplaints, hiring, question, stack }) {
 
   let allPosts = [];
 
-  for (const query of SEARCH_QUERIES) {
-    console.log(`\nSearching: ${query}`);
+  for (const query of searchQueries) {
+
+    if (stopRequested) break;
+
+    progress.currentQuery = query;
+
+    console.log(`Searching: ${query}`);
     const url = `https://www.linkedin.com/search/results/content/?keywords=${encodeURIComponent(query)}`;
     await page.goto(url);
     await page.waitForSelector("div.feed-shared-update-v2");
@@ -168,9 +181,11 @@ function classifyLead({ ciComplaints, hiring, question, stack }) {
     let previousHeight = 0;
 
     while (posts.length < MAX_POSTS_PER_QUERY) {
-      const newPosts = await page.$$eval(
-        "div.feed-shared-update-v2",
-        elements => elements.map(el => {
+
+      if (stopRequested) break;
+
+      const newPosts = await page.$$eval("div.feed-shared-update-v2", elements =>
+        elements.map(el => {
           const textElement = el.querySelector(".feed-shared-update-v2__description");
           return {
             id: el.getAttribute("data-urn"),
@@ -178,75 +193,82 @@ function classifyLead({ ciComplaints, hiring, question, stack }) {
             author: el.querySelector(".update-components-actor__name")?.innerText || "",
             headline: el.querySelector(".update-components-actor__description")?.innerText || "",
             profileUrl: el.querySelector(".update-components-actor__meta-link")?.href || "",
-            timestamp: el.querySelector(".update-components-actor__sub-description")?.innerText || "",
-            likes: el.querySelector(".social-details-social-counts__reactions-count")?.innerText || "0",
-            comments: el.querySelector(".social-details-social-counts__comments")?.innerText || "0"
+            timestamp: el.querySelector(".update-components-actor__sub-description")?.innerText || ""
           };
         })
       );
 
       posts = [...new Map([...posts, ...newPosts].map(p => [p.id, p])).values()];
-      console.log(`Collected: ${posts.length}`);
 
       if (posts.length >= MAX_POSTS_PER_QUERY) break;
+
       await page.mouse.wheel(0, 3000);
-      await page.waitForTimeout(3000 + Math.random() * 4000);
+      await page.waitForTimeout(3000 + Math.random() * 3000);
 
       const height = await page.evaluate(() => document.body.scrollHeight);
       if (height === previousHeight) break;
       previousHeight = height;
     }
 
-    const processedPosts = posts.slice(0, MAX_POSTS_PER_QUERY).map(post => {
-      const likes = parseNumber(post.likes);
-      const comments = parseNumber(post.comments);
-      const leadScore = scoreLead(post);
+    // Scrape comments for each post
+    for (let post of posts) {
+      if (stopRequested) break;
+
+      const postUrl = post.profileUrl;
+      try {
+        const postPage = await context.newPage();
+        await postPage.goto(postUrl);
+        // Expand comments section
+        await postPage.$$eval("button.comment-button", btns => btns.forEach(b => b.click()));
+        const comments = await postPage.$$eval(".comments-comment-item__main-content", els =>
+          els.map(el => el.innerText)
+        );
+        if (comments.length) {
+          post.text += "\n" + comments.join("\n");
+        }
+        await postPage.close();
+      } catch (err) {
+        console.log("Failed to scrape comments for post", postUrl);
+      }
+    }
+
+    allPosts.push(...posts.map(post => {
       const ciComplaints = detectCIComplaint(post);
-      const isLead = detectLead(post);
       const hiring = detectHiring(post);
-      const question = detectQuestion(post);
-      const stack = MOBILE_STACK.filter(s => post.text.toLowerCase().includes(s));
+      const jobSeeker = detectJobSeeker(post);
+      const stack = detectStack(post);
       const company = extractCompany(post.headline);
 
-      return {
-        ...post,
-        searchQuery: query,
-        likesParsed: likes,
-        commentsParsed: comments,
-        engagement: likes + comments * 2,
-        isLead,
-        leadScore: leadScore + (hiring ? 6 : 0) + (question ? 7 : 0),
-        hotLead: leadScore >= 8,
-        ciComplaints,
-        potentialCodemagicLead: isPotentialCodemagicLead({ ...post, isLead, ciComplaints }),
-        hiring,
-        question,
-        stack,
-        company,
-        leadType: classifyLead({ ciComplaints, hiring, question, stack })
-      };
-    });
+      const isLead = detectLead(post);
+      const hotLead = ciComplaints.ciComplaintText.length > 0;
 
-    allPosts.push(...processedPosts);
+      return {
+        author: post.author,
+        company,
+        profileUrl: post.profileUrl,
+        searchQuery: query,
+        stack: stack.join(", "),
+        leadReason: generateLeadReason(post, ciComplaints, hiring),
+        hotLead,
+        ciTool: ciComplaints.platformsMentioned.join(", "),
+        ciComplaint: ciComplaints.ciComplaintText,
+        postText: post.text,
+        isLead,
+        jobSeeker
+      };
+    }));
+
+    progress.completed += 1;
   }
 
-  allPosts = [...new Map(allPosts.map(p => [p.id, p])).values()];
-
-  const leads = allPosts.filter(p => p.isLead);
-  const hotLeads = leads.sort((a, b) => b.leadScore - a.leadScore).slice(0, 50);
-  const potentialLeads = allPosts.filter(p => p.potentialCodemagicLead);
-
-  if (!fs.existsSync("output")) fs.mkdirSync("output");
+  const leads = allPosts.filter(p => p.isLead && !p.jobSeeker);
   const parser = new Parser();
-  fs.writeFileSync("output/all_posts.json", JSON.stringify(allPosts, null, 2));
-  fs.writeFileSync("output/leads.json", JSON.stringify(leads, null, 2));
-  fs.writeFileSync("output/hot_leads.json", JSON.stringify(hotLeads, null, 2));
-  fs.writeFileSync("output/potential_codemagic_leads.json", JSON.stringify(potentialLeads, null, 2));
   fs.writeFileSync("output/leads.csv", parser.parse(leads));
-  fs.writeFileSync("output/hot_leads.csv", parser.parse(hotLeads));
-  fs.writeFileSync("output/potential_codemagic_leads.csv", parser.parse(potentialLeads));
 
-  console.log(`\nDone. Total posts: ${allPosts.length}, Leads: ${leads.length}, Hot leads: ${hotLeads.length}, Potential Codemagic leads: ${potentialLeads.length}`);
   await browser.close();
-})();
+  progress.running = false;
 
+  return leads;
+}
+
+module.exports = { runScraper, requestStop };

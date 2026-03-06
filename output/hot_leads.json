@@ -1,0 +1,53 @@
+[
+  {
+    "author": "",
+    "company": "",
+    "headline": "16,631 followers\n16,631 followers",
+    "profileUrl": "https://www.linkedin.com/company/bitrise/posts",
+    "timestamp": "3w • \n \n3 weeks ago • Visible to anyone on or off LinkedIn",
+    "searchQuery": "bitrise slow build",
+    "stack": "",
+    "leadType": "CI Pain",
+    "leadReason": "Complaining about bitrise, github actions CI/CD issue: to all github actions users: we know you love your github tool, but we know running mobile builds on generic ci tools can be slow and painful",
+    "hotLead": true,
+    "ciTool": "bitrise, github actions",
+    "ciComplaint": "to all github actions users: we know you love your github tool, but we know running mobile builds on generic ci tools can be slow and painful",
+    "postText": "​​Fall in love with faster builds 💗\n\nTo all GitHub Actions users: we know you love your GitHub tool, but we know running mobile builds on generic CI tools can be slow and painful. \n\nThat's why we’ve released Build Hub. ✨\n\nGet infrastructure optimized specifically for iOS & Android:\n\n– Up to 90% faster builds with M4 Pro & optional co-located caching\n– Same-day Xcode stack updates\n– Optimized cost-to-performance vs generic runners\n– Fully managed, zero maintenance\n\nNo platform migration. No workflow changes. No retraining developers. 💌\n\nJust plug, play, and get all the warm and fuzzies: 🔗 https://bit.ly/46FUPgH\n\n\nhashtag\n#Bitrise \nhashtag\n#BuildHub \nhashtag\n#GitHubActions \nhashtag\n#CICD \nhashtag\n#iOS \nhashtag\n#Linux\n…more",
+    "isLead": true,
+    "jobSeeker": false
+  },
+  {
+    "author": "",
+    "company": "",
+    "headline": "Indie app developer, content creator and iOS Engineer\nIndie app developer, content creator and iOS Engineer",
+    "profileUrl": "https://www.linkedin.com/in/polpielladev?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABzHYRcBvxMn_5EaHtYjsGsXdWabPYITLuo",
+    "timestamp": "3mo • \n \n3 months ago • Visible to anyone on or off LinkedIn",
+    "searchQuery": "bitrise slow build",
+    "stack": "",
+    "leadType": "CI Pain",
+    "leadReason": "Complaining about bitrise, github actions CI/CD issue: 🌟 this issue was kindly sponsored by bitrise",
+    "hotLead": true,
+    "ciTool": "bitrise, github actions",
+    "ciComplaint": "🌟 this issue was kindly sponsored by bitrise",
+    "postText": "Have you ever wondered how big companies automate their processes or what the process is to set up self-hosted GitHub Actions runners for your projects?\n\n👀 You might want to read my latest issue of the newsletter, featuring content from Alberto Salas, Back Market, Rightmove and more!\n\n🌟 This issue was kindly sponsored by Bitrise\n…more",
+    "isLead": true,
+    "jobSeeker": false
+  },
+  {
+    "author": "",
+    "company": "",
+    "headline": "Head of Solutions & Growth | Bridging the Gap between Business Needs & Technical Architecture | CRM & ERP Integration Expert\nHead of Solutions & Growth | Bridging the Gap between Business Needs & Technical Architecture | CRM & ERP Integration Expert",
+    "profileUrl": "https://www.linkedin.com/in/edo-sagron?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACh_X4QBxKv5KYnK-8Q4XlUevWcrgBfxjVo",
+    "timestamp": "1yr • \n \n1 year ago • Visible to anyone on or off LinkedIn",
+    "searchQuery": "bitrise slow build",
+    "stack": "flutter",
+    "leadType": "CI Pain",
+    "leadReason": "Complaining about bitrise, github actions CI/CD issue: , github actions, bitrise) to catch issues before deployment",
+    "hotLead": true,
+    "ciTool": "bitrise, github actions",
+    "ciComplaint": ", github actions, bitrise) to catch issues before deployment",
+    "postText": "Best Practices for Scalable App Development – Avoiding Technical Debt Early\n\nScalability isn’t just about handling more users—it’s about building apps that grow without breaking. Too often, developers cut corners to ship fast, leading to technical debt that slows innovation and increases maintenance costs.\n\nHere’s how to avoid technical debt early and build apps that scale seamlessly:\n\n🔥 Best Practices for Scalable Development\n\n✅ Design for Scalability from Day One – Use modular architecture (e.g., microservices or feature-driven development) to keep your codebase clean and adaptable.\n\n✅ Prioritize Clean Code & Documentation – Future-proof your app with clear, maintainable code and proper documentation so teams can onboard quickly.\n\n✅ Use the Right State Management – In Flutter, choose between Riverpod, Bloc, or Provider depending on your app’s complexity. Poor state management can lead to performance bottlenecks.\n\n✅ Leverage Cloud-Native Solutions – Use Google Cloud, Firebase, or AWS Lambda to handle traffic spikes efficiently without over-provisioning servers.\n\n✅ Optimize Your Database – Choose a scalable database (e.g., Firestore, PostgreSQL, or Supabase) and avoid overusing real-time listeners that can drain performance.\n\n✅ Automate Testing & CI/CD – Implement unit, integration, and load testing early. Set up CI/CD pipelines (e.g., GitHub Actions, Bitrise) to catch issues before deployment.\n\n✅ Monitor Performance & Logs – Use Sentry, Firebase Performance Monitoring, or Datadog to track errors and optimize app speed in real time.\n\n\n---\n\n💡 The Key Takeaway? Build with scalability in mind from day one. A well-structured app saves time, money, and frustration as your user base grows.\n\nWhat’s your go-to strategy for scalable app development? Let’s discuss in the comments!\n\n\nhashtag\n#AppDevelopment \nhashtag\n#Scalability \nhashtag\n#TechnicalDebt \nhashtag\n#SoftwareEngineering \nhashtag\n#Flutter \nhashtag\n#GoogleCloud \nhashtag\n#DevOps\n…more",
+    "isLead": true,
+    "jobSeeker": false
+  }
+]

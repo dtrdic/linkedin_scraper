@@ -1,0 +1,1617 @@
+"author","company","profileUrl","searchQuery","stack","leadReason","hotLead","ciTool","ciComplaint","postText","isLead","jobSeeker"
+"","","https://www.linkedin.com/in/m-sulman-18676a313?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAE-rLnYBljUFFxWMkT6RGTh-LUBCmA29er4","ci cd","flutter","Mentions CI tool: bitrise, github actions, gitlab ci",false,"bitrise, github actions, gitlab ci","","Day 2 – Pro Tip
+CI/CD for App Automation: Why Developers Need to Learn It
+
+CI/CD (Continuous Integration & Continuous Deployment) is a must-know for modern developers. It automates building, testing, and deploying apps, making development faster, safer, and more reliable.
+🔹 What Is CI/CD?
+CI: Automatically builds and tests your code on every change.
+CD: Automatically deploys your app to testers or production.
+🔹 Why Learn CI/CD?
+1️⃣ Automates repetitive tasks → saves time
+2️⃣ Ensures code quality → catches bugs early
+3️⃣ Releases apps faster and safer → fewer errors
+4️⃣ Improves team collaboration → stable codebase
+🔹 How to Start
+Use platforms like GitHub Actions, Codemagic, Bitrise, or GitLab CI.
+Create pipelines for building, testing, and deploying your Flutter apps automatically.
+💡 Pro Tip: Even small projects benefit. Learning CI/CD shows professionalism, reliability, and efficiency—skills every company values.
+
+hashtag
+#Flutter 
+hashtag
+#FlutterDev 
+hashtag
+#CICD 
+hashtag
+#MobileDevelopment 
+hashtag
+#DevOps 
+hashtag
+#SoftwareEngineering 
+hashtag
+#CleanCode 
+hashtag
+#FlutterInterview
+…more",true,false
+"","","https://www.linkedin.com/in/jagadeesh-sanagani?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAD0MO_4BrRaLdlSkTCD36BNvKrGdW-L7vj8","ci cd","","Mentions CI tool: github actions, jenkins, circleci, azure devops, gitlab ci",false,"github actions, jenkins, circleci, azure devops, gitlab ci","","Today I started learning one of the core pillars of DevOps: CI/CD (Continuous Integration & Continuous Deployment).
+In traditional development, integrating code and releasing applications used to take days or even weeks. DevOps practices like CI/CD help teams build, test, and deploy software faster and more reliably.
+🔹 Continuous Integration (CI)
+ Developers frequently merge their code changes into a shared repository.
+ Each change automatically triggers:
+✔ Build process
+ ✔ Automated tests
+ ✔ Code validation
+This ensures that issues are detected early before they reach production.
+🔹 Continuous Delivery / Continuous Deployment (CD)
+After the CI stage, the application can automatically move to deployment stages.
+Continuous Delivery → Code is always ready to deploy, but deployment may require manual approval.
+Continuous Deployment → Every successful change is automatically deployed to production.
+🔹 Basic CI/CD Pipeline Flow I Learned
+1️⃣ Developer writes code
+ 2️⃣ Code pushed to Git repository
+ 3️⃣ CI server triggers build & tests
+ 4️⃣ Application package is created
+ 5️⃣ Deployment to staging/production
+🔹 Popular CI/CD Tools
+⚙️ Jenkins
+ ⚙️ GitHub Actions
+ ⚙️ GitLab CI
+ ⚙️ CircleCI
+ ⚙️ Azure DevOps
+💡 Key Insight:
+ CI/CD is the backbone of modern DevOps because it enables fast, reliable, and automated software delivery.
+
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#Day6 
+hashtag
+#DevOpsJourney 
+hashtag
+#Automation 
+hashtag
+#LearningInPublic
+…more",true,false
+"","","https://www.linkedin.com/in/mohammad-abushehada?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFOtYiEBsFTELYAN6kNxhGPv963lik_-8Yo","ci cd","","Mobile dev discussion",false,"","","اليوم 17 — CI/CD: أفضل الممارسات العملية
+
+🌙 Ramadan DevOps Insight #17
+
+مصطلح Continuous Integration (CI)
+هو عملية دمج التعديلات البرمجية بشكل متكرر في المستودع الرئيسي، مع تشغيل اختبارات آلية للتأكد انو الكود الجديد ما بسبب أخطاء.
+
+أما Continuous Deployment (CD)
+فهو عملية نشر التحديثات الجديدة تلقائيا إلى بيئة الإنتاج بعد اجتياز جميع الاختبارات بنجاح.
+
+بتساعد هاي الممارسات فرق التطوير على العمل بسرعة أكبر مع الحفاظ على جودة واستقرار الأنظمة.
+
+أفضل الممارسات في CI/CD بتشمل:
+• تشغيل اختبارات آلية قبل دمج أي كود جديد
+• بناء التطبيق (Build) تلقائيا بعد كل تحديث
+• نشر التحديثات تلقائيا بعد نجاح جميع الاختبارات
+• استخدام مراحل واضحة داخل الـ pipeline لضمان جودة الكود
+• مراقبة الأداء والاستقرار بعد كل إصدار
+
+تطبيق CI/CD بشكل صحيح بساعد الفرق على تقليل الأخطاء البشرية، تسريع إصدار الميزات، وتحسين استقرار الأنظمة في بيئة الإنتاج.
+
+
+Continuous Integration (CI) 
+is the practice of frequently merging code changes into a shared repository while running automated tests to ensure the new code does not introduce errors.
+
+Continuous Deployment (CD)
+is the practice of automatically releasing new updates to production after all tests pass successfully.
+
+These practices help development teams deliver software faster while maintaining system stability and code quality.
+
+Best practices for CI/CD include:
+• Running automated tests before merging code
+• Automatically building the application after each update
+• Deploying updates automatically after successful tests
+• Using clear pipeline stages to maintain code quality
+• Monitoring performance and stability after each release
+
+Implementing CI/CD effectively helps teams reduce human errors, accelerate feature delivery, and maintain reliable production systems.
+
+
+hashtag
+#RamadanTech 
+hashtag
+#DevOps 
+hashtag
+#CI_CD
+…more",true,false
+"","","https://www.linkedin.com/company/onetechterm/posts","ci cd","","Mobile dev discussion",false,"","","Every time a developer writes code, this kicks in automatically. Here's what it does.
+
+🔵 One Tech Term #8
+
+CI/CD — Continuous Integration & Continuous Delivery
+
+In plain English: CI/CD is like a factory conveyor belt for software. Every time a developer adds new code, it automatically gets tested, built, and prepared for release without anyone having to do it manually. No waiting for a big monthly deployment. No crossing fingers hoping nothing breaks. Small updates ship safely and frequently — sometimes dozens of times a day. Think of it as the difference between releasing one massive album once a year versus dropping singles every week.
+
+Why it matters: CI/CD directly impacts how fast your team can ship value to users. When engineers talk about ""pipeline failures,"" ""deployment frequency,"" or ""release cycles"" — they're talking about CI/CD. As a PM or TPM, understanding this helps you set realistic timelines, diagnose slowdowns, and push for faster, safer delivery.
+
+
+hashtag
+#OneTechTerm 
+hashtag
+#TechInPlainEnglish 
+hashtag
+#LearnTech 
+hashtag
+#CICD 
+hashtag
+#DevOps 
+hashtag
+#TechForEveryone
+
+Follow One Tech Term for one new tech concept explained simply, every single day.
+…more",true,false
+"","","https://www.linkedin.com/in/ziv-be-eri?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADOCxK8BsY65Ba0FTtNMVHmnZBi1pDmM4OI","ci cd","","Mobile dev discussion",false,"","","סוגר שנה בCambium Applicable Innovation.
+
+קמביום הוא המקום הראשון שהרגיש שאני עובד בעבודה ""של גדולים"".
+עמדה משלי, מחשב משלי, טייטל בארגון ובעיקר התרגשות מאוד גדולה.
+ידעתי שאני מכיר שיווק ומכיר לינקדאין, אבל ידעתי שיש לי עוד הרבה מה ללמוד..
+
+עד אז עבדתי במקומות שעולם התוכן היה קשור אלי אישית, אבל קמביום היא חברת תוכנה - הייתי צריך ללמוד עולם תוכן חדש לגמרי שעד אז אפילו ""פחדתי"" לגעת בו - מה לי ולריקאט? מה זה עכשיו CI/CD? איך עובדים עם ג'ירה?
+הגעתי לתפקיד בלחץ מאוד גדול, חשבתי שזה גדול עליי להקים פייפליין שיווקי שיביא לידים, שאני אתבייש לשאול אנשים שאלות, שאני לא אצליח לבטא את עצמי. 
+
+שנה אחרי זה, אני רוצה להגיד שהשנה הזאת הייתה שנה מאוד מוצלחת (David Salzer (זלצר) ,Shira Salzer ו-Israel Gliksberg הם היחידים שיכולים באמת לאשר את הסברה הזאת 😂). 
+
+אבל ברצינות - באמת הייתה שנה של למידה, של התנסות ושל חידוד ידע לצד מציאות מטורפת של AI ומלחמות.
+
+אני רוצה להגיד תודה רבה לכל מי שעובד בקמביום שסובל את ""החפירות"" שלי בקבוצות ובפיד בלינקדאין, כל מי ששיתף איתי פעולה וישב איתי על פוסט שהוא רוצה לכתוב והרגיש תקוע, למנהלים שלי שנותנים לי את העצמאות ואת האמצעים להביא תוצאות ולהצמיח את הארגון. 
+ושתהיה לכולם עוד שנה מוצלחת (ובלי טילים איראניים) ☺️
+…more",true,false
+"","","https://www.linkedin.com/in/abdulmalik-ibrahim?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACQN5GkB3Ou5HUA3SimhnPENa7LPfy2hnxo","ci cd","","Mobile dev discussion",false,"","","Continuous Delivery Requires Continuous Discipline
+
+CI/CD isn’t a one-time setup.
+
+It requires:
+ • Updating tests
+ • Improving pipelines
+ • Reviewing failures
+ • Adapting to new threats
+
+Teams that “set it and forget it” slowly decay.
+
+Mature teams evolve their pipelines as they grow.
+…more",true,false
+"","","https://www.linkedin.com/in/md-bappy-729136263?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAECgG5EBAitV7hlFseaPZ21_8q-AzmHuIT4","ci cd","flutter","Mentions CI tool: bitrise, github actions, jenkins, circleci, gitlab ci",false,"bitrise, github actions, jenkins, circleci, gitlab ci","","🚀 Understanding CI/CD A Must-Know Workflow for Modern Developers.
+Writing code is only part of software development. Delivering reliable software quickly is just as important. That’s where CI/CD (Continuous Integration & Continuous Deployment) comes in.
+
+CI/CD automates the process of building, testing, and delivering applications, reducing manual work and helping teams release software faster and more reliably.
+
+🔹 What is CI (Continuous Integration)?
+Continuous Integration means automatically verifying code whenever a developer pushes changes to a repository.
+
+Typical CI pipeline steps:
+• Pull the latest code from the repository
+• Install project dependencies
+• Run static analysis (linting / code quality checks)
+• Execute automated tests
+• Build the application
+If any step fails, the pipeline stops and the developer fixes the issue before merging the code.
+
+Example trigger:
+A simple git push can start the CI pipeline automatically.
+
+🔹 What is CD (Continuous Deployment / Continuous Delivery)?
+Once CI successfully verifies the code, the pipeline moves to the deployment stage.
+CD automates the release process by:
+• Building production artifacts (APK, IPA, Docker images, etc.)
+• Uploading builds to testing platforms or app stores
+• Deploying applications to servers or cloud environments
+This allows teams to release software faster, more frequently, and more reliably.
+
+🔹 Typical CI/CD Workflow
+Developer writes code
+→ Pushes code to Git repository
+→ CI pipeline runs (build, test, analyze)
+→ If successful, CD pipeline deploys the application
+
+🔹 Example with GitHub Actions
+A workflow file is added inside the repository:
+.github/workflows/pipeline.yml
+This file defines the automated steps that run when events occur such as push, pull request, or release.
+
+Example CI workflow:
+name: Flutter CI
+on:
+ push:
+ branches: [ main ]
+
+jobs:
+ build:
+ runs-on: ubuntu-latest
+
+ steps:
+ - uses: actions/checkout@v3
+
+ - name: Setup Flutter
+ uses: subosito/flutter-action@v2
+ with:
+ flutter-version: '3.41.1'
+
+ - run: flutter pub get
+ - run: flutter analyze
+ - run: flutter test
+
+This workflow automatically installs Flutter, analyzes the code, and runs tests whenever code is pushed to the main branch.
+
+🔹 Why CI/CD Matters for Developers
+✔ Detect bugs early
+✔ Automate repetitive tasks
+✔ Maintain consistent builds
+✔ Speed up releases
+✔ Improve team collaboration
+CI/CD is no longer optional — it’s a core practice in modern software engineering.
+
+Whether you're building mobile apps, backend services, or web applications, understanding CI/CD can significantly improve development efficiency.
+
+🔹 Popular CI/CD Tools Developers Use
+• GitHub Actions
+• GitLab CI/CD
+• Jenkins
+• Bitrise
+• CircleCI
+
+
+hashtag
+#CI 
+hashtag
+#CD 
+hashtag
+#DevOps 
+hashtag
+#SoftwareEngineering 
+hashtag
+#GitHubActions 
+hashtag
+#Flutter 
+hashtag
+#Automation
+…more",true,false
+"","Itau USA","https://www.linkedin.com/in/engthiagofernandes?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABKYj9UBh8T7gPUF_xc0zFHyHK_8mPHYuPU","ci cd","","Mobile dev discussion",false,"","","🧡 We’re hiring a Staff Engineer (AVP) at Itaú USA in Miami!
+
+We are transforming the technology behind Latin America’s largest bank in the U.S., and we’re looking for a hands-on senior engineer who enjoys solving complex problems, designing scalable systems, and driving automation across the technology stack.
+
+This role will play a key part in shaping our automation and cloud-native architecture, working closely with engineering, infrastructure, security, and business teams.
+
+In this role, you will help us:
+• Design microservices, event-driven and API-based architectures
+• Build and operate cloud-native platforms on AWS
+• Advance our Infrastructure as Code and CI/CD automation capabilities
+• Work with containerized environments (Docker, Kubernetes or ECS)
+• Improve reliability, observability, and operational excellence across our platforms
+• Serve as a technical reference and mentor for other engineers
+
+Tech stack highlights:
+AWS • .NET / C# • Docker • Kubernetes / ECS • Terraform / CDK / CloudFormation • CI/CD • Git
+
+Experience with Jira administration, process automation platforms, or regulated environments (banking/financial services) is a plus.
+
+📍 Location: Miami (Hybrid)
+
+⚠️ Important: We are only considering candidates who are already located in the U.S. and have work authorization.
+
+If you enjoy building robust platforms, automating everything possible, and helping shape the future of technology in banking, please consider applying for the position.
+
+
+hashtag
+#WeAreHiring 
+hashtag
+#CloudEngineering 
+hashtag
+#SoftwareEngineering
+…more",true,false
+"","","https://www.linkedin.com/in/abderrahemane-rouas-102014335?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFQvfJIBwL8SuzzhU0QKOhXxeaaZVD8XZlM","ci cd","","Mobile dev discussion",false,"","","التسليم المستمر (CI/CD) يضمن لك تحديثات تدريجية وآمنة مما يقلل من المشاكل في الإنتاج ويساعد في تحسين الكود بشكل مستمر.
+ في عالم البرمجة السرعة في التحديث والأمان في التنفيذ هما المفتاح!
+
+Continuous Delivery (CI/CD) ensures you have incremental and secure updates which reduces problems in production and helps in continuous improvement of the code.
+ In the world of programming, speed in updating and security in implementation are key!
+
+
+hashtag
+#bug
+
+hashtag
+#CI_CD
+
+
+✍️Abderrahemane Rouas 🧠⚡
+…more",true,false
+"","Yahoo!
+Talent Guide at Yahoo!","https://www.linkedin.com/in/stevie-deeds-259472159?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACX6ReUBLPaPfQNp2wh_liRsNhhKoFJor_g","ci cd","","Mobile dev discussion",false,"","","🔥 We’re hiring a Senior Full Stack Engineer for our Key-Value Store & Messaging team here at Yahoo to build and run the planet-scale platforms behind Yahoo's Mail, Finance, Sports, Media, and Ads platforms.
+
+⭐ Own and operate massive distributed systems handling millions of requests per second and petabytes of global data for Yahoo’s most critical, revenue-driving products.
+⭐ Design, build, and scale high-performance NoSQL and messaging platforms, with a relentless focus on reliability, latency, and automation-first engineering (CI/CD, provisioning, scaling, ops).
+⭐ Bring deep Java and distributed systems expertise, building and improving large-scale production services and REST APIs in AWS/GCP; React + Node.js experience is a strong plus.
+⭐ Leverage AI-powered tools and insights to supercharge debugging, testing, performance tuning, and system optimization across real-time and AI-driven workloads.
+⭐ Lead by example as a senior IC, mentoring engineers, driving architecture and code reviews, and partnering with teams across Yahoo to unlock new product innovation.
+
+If building and scaling core platforms that power hundreds of millions of users excites you, apply today!
+…more",true,false
+"","","https://www.linkedin.com/in/shivamvishwakarm1?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADp2aVgBuNM7zYeVlGXTrijvibf1GcB-8N4","ci cd","","Mobile dev discussion",false,"","","Continuous Integration (CI) & Continuous Deployment (CD) Using Azure Pipeline.
+
+
+hashtag
+#DevOps
+
+hashtag
+#CICD
+
+hashtag
+#AzurePipelines 
+hashtag
+#AzureDevOps 
+hashtag
+#DevOpsCloud 
+hashtag
+#AzureCloud 
+hashtag
+#DevShivOps
+…more",true,false
+"","","https://www.linkedin.com/in/taomar?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAF6UqkBER749z8s4cYDMWYUuyeAimVM1-I","ci cd","","Mentions CI tool: github actions, jenkins",false,"github actions, jenkins","","🚀 DevOps Engineer – US
+🌍 Remote | 💼 Full-Time
+💰 $140,000 – $180,000 USD + Equity
+If you live in CI/CD pipelines and think in containers, this one’s for you.
+micro1 is building the human data infrastructure behind advanced AI systems — and they’re looking for a DevOps Engineer to scale secure, resilient cloud environments.
+🔧 What you’ll own:
+⚙️ Design & optimize CI/CD pipelines (Jenkins, GitHub Actions, Terraform)
+🐳 Deploy & manage containers with Docker & Kubernetes
+☁️ Build cloud-native infrastructure on AWS / GCP
+📈 Improve reliability, scalability & performance
+🔐 Strengthen infrastructure security & compliance
+🎯 What they’re looking for:
+✔️ 5+ years in DevOps / Infrastructure
+✔️ Strong Docker, Kubernetes, AWS expertise
+✔️ Automation mindset
+✔️ Clear communication skills
+✔️ Security practices in CI/CD is a plus
+High ownership. High impact. Remote-first culture.
+Serious compensation for serious engineers.
+🔗 Apply here: [https://lnkd.in/eb3n7N7B]
+
+hashtag
+#DevOps 
+hashtag
+#RemoteJobs 
+hashtag
+#CloudEngineering 
+hashtag
+#AWS 
+hashtag
+#Kubernetes 
+hashtag
+#Docker 
+hashtag
+#Hiring 
+hashtag
+#TechCareers
+…more",true,false
+"","CDON Group
+Senior Software Engineer","https://www.linkedin.com/in/niklasrydkvist?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABG3xIsBNESWa_gvL1LLC5MN9AiXeyiM8Gs","ci cd","","Mobile dev discussion",false,"","","Closing an important chapter at H&M Group (and starting a new one!)
+
+Over the past few years within H&M Group’s Portfolio Brands, I helped rebuild the ARKET.com e-commerce platform, guiding the frontend architecture as we migrated from a white-label setup to a modern, scalable platform built with Next.js. It was launched across 14 global markets (and growing), serving millions of users.
+
+Along the way I spent time understanding the day-to-day challenges of designers, merchandisers, content teams and fellow developers across ARKET, COS, Weekday and & Other Stories. From improving the architecture and CMS workflows to strengthening CI/CD pipelines and exploring AI-assisted workflows, much of the work focused on removing bottlenecks and making the platform easier for teams across H&M Group's four brands to build and operate.
+
+A big thank you to the engineers, product managers, designers and stakeholders I had the chance to work with and everything we built together!
+
+Now I’m excited for new challenges and wins at CDON Group, working strategically across the group’s marketplace platforms, CDON and Fyndiq.
+…more",true,false
+"","","https://www.linkedin.com/in/aditya-jadhav-718087339?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFToC0QBKvaY1cznkVDRTLxwk_GVnF-H1Hg","ci cd","","Mobile dev discussion",false,"","","🟢 Day 101 — GitOps vs CI/CD 
+
+✨ Hello DevOps Learners!
+Continuing my GitOps learning journey after completing Ansible, today I’m exploring an important topic: GitOps vs CI/CD. Many people think they are the same, but they actually work together in modern DevOps workflows. 🚀
+Let’s understand the difference.
+
+🔹 Role of CI/CD Pipeline
+ CI/CD focuses on building, testing, and delivering applications automatically.
+CI (Continuous Integration): Code is built and tested whenever developers push changes.
+CD (Continuous Delivery/Deployment): The application is prepared or deployed automatically to environments.
+
+🔹 Where GitOps Fits
+ GitOps focuses on how applications are deployed and managed in infrastructure, especially in Kubernetes environments.
+Git stores the desired state of the system
+GitOps tools continuously ensure the infrastructure matches what is defined in Git
+
+🔹 DevOps Pipeline Integration
+Typical modern pipeline:
+Developer → Git Commit → CI Pipeline (Build/Test) → Update Config Repo → GitOps Tool Deploys to Cluster
+In this model:
+CI builds the application
+GitOps handles the deployment
+
+💡 Key Idea:
+ CI/CD automates software delivery, while GitOps automates infrastructure deployment using Git as the source of truth.
+
+
+hashtag
+#GitOps 
+hashtag
+#DevOps 
+hashtag
+#Automation 
+hashtag
+#InfrastructureAsCode 
+hashtag
+#Linux 
+hashtag
+#Cloud 
+hashtag
+#LearningJourney
+…more",true,false
+"","","https://www.linkedin.com/in/suresh-kumar-u?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAE572A0B0fJvM6tVG6K1RNTtCLksSRQmhLE","ci cd","","Mobile dev discussion",false,"","","🚀  𝐔𝐧𝐥𝐨𝐜𝐤𝐢𝐧𝐠 𝐭𝐡𝐞 𝐏𝐨𝐰𝐞𝐫 𝐨𝐟 𝐃𝐞𝐯𝐎𝐩𝐬 𝐓𝐨𝐨𝐥𝐬: 𝐀 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐆𝐮𝐢𝐝𝐞 🚀
+
+In today’s fast-paced tech environment, continuous integration and continuous delivery (CI/CD) have become the backbone of agile software development. By automating the process of building, testing, and deploying applications, we can ensure faster delivery cycles, improved collaboration, and higher-quality products. 💻
+
+The DevOps culture isn't just about tools, it's about collaboration, speed, and ensuring the highest quality standards throughout the software development lifecycle.
+Whether you’re deploying microservices or monolithic applications, DevOps and CI/CD are the keys to unlocking agility and reliability in your workflow. 💪
+
+JoinDevOps Sivakumar Reddy Mettukuru 
+
+#devops #linux
+…more",true,false
+"","Complere Infosystem","https://www.linkedin.com/in/isha-taneja18?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABnRPbkBkL86NKXEIM__DBy-Tt3N1b4ZDMQ","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","CI/CD is a solution to the problems integrating new code can cause for development and operations teams (AKA ""integration hell""). Specifically, CI/CD introduces ongoing automation and continuous monitoring throughout the lifecycle of apps, from integration and testing phases to delivery and deployment. 
+
+#cicd #devops #docker #jenkins #linux #kubernetes #programming #pipeline #automation #coding #aws #ansible #gitlab #git #developer #microsoft #github #tecnologia #scrum #cloudcomputing #ti #meme #code 
+hashtag
+#agil 
+hashtag
+#memes 
+hashtag
+#kamban 
+hashtag
+#deploy 
+hashtag
+#agilista 
+hashtag
+#azure 
+hashtag
+#build
+…more",true,false
+"","","https://www.linkedin.com/company/kodekloud/posts","ci cd","","Mentions CI tool: github actions, jenkins, circleci",false,"github actions, jenkins, circleci","","🚀 2026 CI/CD Tier List! 🛠️
+
+S-Tier: The Kings 🏆
+- GitHub Actions/GitLab: All-in-one powerhouses with massive ecosystems.
+- Argo CD: The Kubernetes gold standard for visual syncs.
+
+A/B-Tier: The Specialists 📈
+- Flux: Advanced GitOps control.
+- Tekton/CircleCI: K8s-native or losing market share.
+
+C-Tier: The Legacy 🏛️
+- Jenkins: High-maintenance """"plugin hell."""" Avoid for new builds.
+Verdict: Master GitHub Actions and Argo CD to lead in 2026! 🚀
+
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#GitHubActions 
+hashtag
+#ArgoCD 
+hashtag
+#Jenkins 
+hashtag
+#TechTrends 
+hashtag
+#KodeKloud
+…more",true,false
+"","","https://www.linkedin.com/company/qualityassurancegroup/posts","ci cd","","Mobile dev discussion",false,"","","Нагадуємо: 27.01.2021 відбудеться
+Воркшоп: 
+hashtag
+#CI / 
+hashtag
+#CD with 
+hashtag
+#Shiftleft testing approach
+
+Не прогавте шанс дізнатись про побудову швидких тест циклів (""Shift-Left"" testing approach) для отримання Continuous Delivery
+
+На подію діє Промокод: CI/CDPromo​​​​​​​
+Знижка - 15%
+Вартість: ̶4̶50̶ ̶г̶р̶н̶ > 382,5 грн
+
+Придбати квиток: http://bit.ly/38GTKYK
+
+
+
+hashtag
+#QAGroup 
+hashtag
+#testing 
+hashtag
+#softwaretesting 
+hashtag
+#softwareengineer 
+hashtag
+#QualityAssurance 
+hashtag
+#cicd_tools 
+hashtag
+#QATools 
+hashtag
+#QAAutomation 
+hashtag
+#Selenide 
+hashtag
+#JUnit5 
+hashtag
+#Gatling 
+hashtag
+#TestContainers 
+hashtag
+#QAengineers 
+hashtag
+#DevOps
+…more",true,false
+"","","https://www.linkedin.com/company/tannu-roy/posts","ci cd","","Mobile dev discussion",false,"","","🚀 We’re Hiring: Cloud Engineer
+
+We are looking for a Cloud Engineer skilled in:
+✔ AWS / Azure
+✔ EC2 / IAM / S3
+✔ Networking Basics
+✔ CI/CD
+
+📍 Location: Remote
+💼 Type: Part time
+
+Be the bridge between development and operations 🚀
+
+💬 Comment your email ID – our team will share the assignment link with you within 24 hours!
+
+
+hashtag
+#Hiring 
+hashtag
+#CloudEngineer 
+hashtag
+#RemoteJobs
+…more",true,false
+"","","https://www.linkedin.com/in/adnan-nassar-5a517b1ba?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADLtMI0B6Mu4AAfW8nqKPIp4OO6CfxjkiOc","ci cd","swift","Mobile dev discussion",false,"","","Continuous Integration and Continuous Deployment (CI/CD) are crucial in modern software development, but Amazon and Google view CI/CD in unique ways that align with their distinct operational philosophies.
+
+Amazon focuses on decentralization, empowering individual teams with autonomy to innovate and deploy swiftly. In contrast, Google emphasizes centralized efficiency, leveraging its robust infrastructure to streamline and standardize deployments.
+
+Embracing flexibility and adaptability in CI/CD practices can lead to significant advancements in software delivery.
+
+
+hashtag
+#CICD 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#DevOps 
+hashtag
+#Innovation 
+hashtag
+#TechLeadership 
+hashtag
+#Amazon 
+hashtag
+#Google
+
+https://lnkd.in/eyjA3FKG
+…more",true,false
+"","","https://www.linkedin.com/company/muslimitassociation/posts","ci cd","","Mentions CI tool: github actions, jenkins, gitlab ci",false,"github actions, jenkins, gitlab ci","","CI/CD isn't a buzzword—it's the backbone of modern DevOps.
+
+Continuous Integration and Continuous Deployment have transformed how teams ship software. What used to take weeks now happens in minutes.
+
+Here's what's driving CI/CD adoption in 2026:
+
+⚡ Speed of delivery
+• Automated builds and testing
+• Zero-downtime deployments
+• Blue-green and canary releases
+• Instant rollbacks when issues arise
+
+⚡ Quality and reliability
+• Automated testing catches bugs early
+• Consistent deployment procedures
+• Reduced human error
+• Standardized release process
+
+⚡ Developer productivity
+• Focus on writing code, not manual deployment
+• Immediate feedback loops
+• Integration with cloud providers
+• Infrastructure as code
+
+CI/CD bridges the gap between development and operations:
+
+🔗 Developers push code with confidence
+🔗 Automated pipelines handle the rest
+🔗 Operations teams maintain stability
+🔗 Users get features faster
+
+Key capabilities modern CI/CD provides:
+
+✓ Automated security scanning
+✓ Compliance checks built into pipelines
+✓ Container orchestration integration
+✓ Multi-environment deployment strategies
+
+Why this matters for your career:
+
+CI/CD expertise is no longer optional—it's expected. Organizations want engineers who can:
+
+• Design and maintain pipelines
+• Implement automated testing strategies
+• Manage deployment workflows
+• Troubleshoot pipeline failures
+• Optimize build and deploy times
+
+Top skills to build:
+🔹 GitHub Actions, GitLab CI, Jenkins
+🔹 Docker and Kubernetes
+🔹 Infrastructure as Code (Terraform, CloudFormation)
+🔹 Automated testing frameworks
+
+The future of software delivery is automated, fast, and reliable. Are you building CI/CD skills?
+
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#Automation 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#TechCareers 
+hashtag
+#CloudComputing
+…more",true,false
+"","","https://www.linkedin.com/in/akshayktwt?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAD0ggbIBt3MAVAf1YaAzwqv2qnUkPUv6qRc","ci cd","","Mobile dev discussion",false,"","","Informative blog on 
+hashtag
+#CICD Pipeline. 👇
+
+
+hashtag
+#DevOps Razorops, Inc.",true,false
+"","","https://www.linkedin.com/in/tomer-karin?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAABcrVsBXwFTms6gvVE5Le_kIrlY6v1o_gY","ci cd","","Mobile dev discussion",false,"","","The future is here! 
+Introducing a system the automatically detect and solve its bugs!!
+The CI/CS is Continuous Integration Continuous Solution. 
+It is the next AI step of CI/CD!
+Sometimes all you need to do is to have a strong determination and belief that what was considered impossible s possible   Gather a team of excellent engineers and just strongly inspire them. And let the magic happens. 
+I was invited to participate in the podcast about this new technology and about how AI changed and assists the architect role
+
+Link directly to the podcast video: https://lnkd.in/d62Yh8sP
+
+And to the podcast:
+
+https://lnkd.in/dRnRs6wV
+…more",true,false
+"","","https://www.linkedin.com/in/ayesha-s-56177a236?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADrYsZkBddOT78V86DMh6dZFg-JmhQqgBdM","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","DevOps CI/CD Pipeline Project 🚀
+
+DevOps is not only automation tools.
+
+It’s about building reliable deployment pipelines that mirror real production workflows.
+
+This project guide focuses on end-to-end implementation rather than isolated theory.
+
+
+This guide helps you master 👇
+
+ 🔹 Jenkins pipeline automation
+ 🔹 Docker containerization and Kubernetes orchestration
+ 🔹 Code quality with SonarQube and Trivy
+ 🔹 Monitoring with Prometheus and Grafana
+ 🔹 Real-world CI/CD deployment scenarios
+
+
+Highly valuable for DevOps engineers, cloud learners, and SRE aspirants.
+
+
+👉 Comment “DevOps” & send a connection invitation to get hands-on training in DevOps with job readiness.
+
+
+Follow for more updates Aisha S 
+
+
+ 
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#Kubernetes 
+hashtag
+#Docker 
+hashtag
+#google # LinkedIn 
+
+hashtag
+#CloudEngineering 
+hashtag
+#Automation 
+hashtag
+#HandsOnTraining
+…more",true,false
+"","","https://www.linkedin.com/in/sai-krishna70310?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEpfjLIBbVVA8CmrqkfvrN8q1Y_BjDvnAFE","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","🚀 CI/CD Mastery Starts NOW – DevOps Unplugged Series Kicks Off!
+Dropping Part 1/9 in ""DevOps Unplugged"":
+- CI/CD decoded (no fluff)
+- Bulletproof pipeline blueprint
+- Pitfalls crushed + Jenkins teaser
+- DORA metrics to benchmark your game
+From Waterfall graveyards to Netflix-scale velocity. Real audits, code snippets, 9-week roadmap ahead (Jenkins deep-dive next!).
+
+hashtag
+#CI/CD 
+hashtag
+#DevOps 
+hashtag
+#Jenkins 
+hashtag
+#PipelineEngineering 
+hashtag
+#DevOpsUnplugged
+…more",true,false
+"","","https://www.linkedin.com/in/jovmit?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAeu_6QBdZVn5ddux-kw53tfD08_g20IlHc","ci cd","","Mobile dev discussion",false,"","","Setting up CI/CD at the start of a new project is crucial.
+
+From the get-go you:
+↳ Automate the boring deployment process
+↳ Shorten the feedback loop
+
+I did a workshop setting up CI/CD for Android step-by-step.
+
+If you want the link to the recording, comment ""CICD"" below, and I'll send it over.
+
+What are you using for CI/CD on your side?
+
+
+hashtag
+#androiddev
+…more",true,false
+"","","https://www.linkedin.com/company/cogtix/posts","ci cd","","Mobile dev discussion",false,"","","🚀 𝐀𝐜𝐜𝐞𝐥𝐞𝐫𝐚𝐭𝐞 𝐘𝐨𝐮𝐫 𝐒𝐨𝐟𝐭𝐰𝐚𝐫𝐞 𝐃𝐞𝐥𝐢𝐯𝐞𝐫𝐲 𝐰𝐢𝐭𝐡 𝐂𝐈/𝐂𝐃! 
+
+In today’s fast-paced digital landscape, delivering high-quality applications quickly is a game-changer. That’s why 𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐨𝐮𝐬 𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐢𝐨𝐧 (𝐂𝐈) and 𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐨𝐮𝐬 𝐃𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭 (𝐂𝐃) have become indispensable for modern development teams. 
+
+From 𝐚𝐜𝐜𝐞𝐥𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭 𝐜𝐲𝐜𝐥𝐞𝐬 and 𝐢𝐦𝐩𝐫𝐨𝐯𝐢𝐧𝐠 𝐜𝐨𝐝𝐞 𝐪𝐮𝐚𝐥𝐢𝐭𝐲 to 𝐞𝐧𝐡𝐚𝐧𝐜𝐢𝐧𝐠 𝐜𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐢𝐨𝐧 and 𝐝𝐞𝐥𝐢𝐠𝐡𝐭𝐢𝐧𝐠 𝐮𝐬𝐞𝐫𝐬, CI/CD ensures seamless and reliable software delivery. 
+
+At Cogtix, we specialize in implementing tailored CI/CD pipelines that streamline your development processes, so you can focus on innovation. 
+
+👉 Ready to transform your software delivery? 
+
+Let’s innovate together! 
+
+
+hashtag
+#CI 
+hashtag
+#CD 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#DevOps 
+hashtag
+#Cogtix
+…more",true,false
+"","","https://www.linkedin.com/in/ankush-sharma-897631220?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADefRrMBxzssmJHC4i7l-cEx9R-_QzG243w","ci cd","","Mentions CI tool: github actions",false,"github actions","","Looking for a SDET which is in Plano, TX
+Need locals only no relocation will work.
+Skills: Need 6+ Years only. 
+Proficiency in JavaScript/TypeScript with experience writing automated test scripts.
+Familiarity with Playwright, Artillery, and CI/CD tools (e.g., GitHub Actions).
+Understanding of Agile, TDD, and BDD methodologies.
+
+
+hashtag
+#Email: ankushs@beaconfireinc.com
+
+hashtag
+#Phone: 609-374-9088
+…more",true,false
+"","","https://www.linkedin.com/in/hoogvliets?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAL9R-0BgREAwuSwnqVpDyWDcYvAMttVfbw","ci cd","","Mobile dev discussion",false,"","","CI/CD pipelines are amazing! They're key for automated and fast deployments, and can greatly improve the impact and flexibility of your data science teams.
+
+I wrote a blog that introduces basic CI/CD for 
+hashtag
+#machinelearning solutions using GitLab. It includes:
+
+✅ linting
+✅ unit-testing
+✅ python packaging
+✅ containerizing with docker
+✅ pushing image to container registry
+
+Check out the 🔗 below and level up your 
+hashtag
+#datascience game today!
+…more",true,false
+"","","https://www.linkedin.com/in/snehal-palaspagar?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADVwVTkBv7-b3MjhdqaMwpB0Ee5tYGXMfaM","ci cd","","Mentions CI tool: github actions, gitlab ci",false,"github actions, gitlab ci","","Want to know Key Differences between GitHub Actions and GitLab CI/CD , both are powerful automation tools for Continuous Integration/Continuous Deployment (CI/CD), but they have different strengths.
+Check out my latest blog on medium for a quick hands-on guide!
+
+hashtag
+#GitHubActions 
+hashtag
+#GitLabCI 
+hashtag
+#CI_CD 
+hashtag
+#DevOps 
+hashtag
+#Automation 
+hashtag
+#SoftwareDevelopment
+GitHub GitLab Medium GitHub Enterprise 
+
+https://lnkd.in/dPQzWsxT
+…more",true,false
+"","","https://www.linkedin.com/in/anshi2021?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACQ7SNUBVyxO7RqlLWByIuw8wDX-xtAsa4s","ci cd","","Mobile dev discussion",false,"","","Role: AWS Data Engineer
+Location: Malvern, PA or Charlotte, NC - onsite day one
+C2C is okay
+Must have:
+IAM
+VPC subnet, 
+Cross-account related access
+CI/CD
+TERRAFORM
+Data bricks 
+AWS Glue
+Pyspark
+
+Thanks
+Anshika
+anshika@intellisofttech.com
+…more",true,false
+"","","https://www.linkedin.com/company/secureflag/posts","ci cd","","Mobile dev discussion",false,"","","Supply chain attacks are estimated to have cost businesses $60 billion in 2025 ⛓️
+
+CI/CD pipelines are a prime target: they touch source code, credentials, and deployment infrastructure all at once. Our latest blog post breaks down the biggest threats and practical steps to secure your code.
+
+Discover how to prevent pipeline vulnerabilities: https://lnkd.in/eDc4UBww
+
+
+hashtag
+#CICDSecurity 
+hashtag
+#SoftwareSupplyChain 
+hashtag
+#DevSecOps 
+hashtag
+#AppSec
+…more",true,false
+"","","https://www.linkedin.com/in/nikhil-singh-baghel-a0a208292?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEbds6oB2X7LZStVlrUwmr0p_HnnXKuIHp0","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","🚀 Day 10/20 – Jenkins, CI/CD & Automation Pipelines
+
+ today I focused on Jenkins, a powerful automation server used to implement Continuous Integration (CI) and Continuous Deployment (CD) in modern DevOps workflows.
+
+🔹 Topics Covered:
+• What is Jenkins & why it is used
+• Understanding Continuous Integration (CI)
+• Understanding Continuous Deployment / Continuous Delivery (CD)
+• Advantages of CI/CD in software development
+• What is a Job in Jenkins and how it automates tasks
+• Matrix-Based Security in Jenkins for managing user permissions and access control
+
+🔹 Hands-On Practice:
+• Installed and accessed Jenkins server
+• Created and executed 3 Jenkins Jobs:
+• buildwithpara
+• first-project
+• gitwithmaven
+• Ran builds and monitored build history, success status, and duration
+
+🔹 Key Learning:
+Jenkins automates the software delivery pipeline — from building code to testing and deployment — while security features like Matrix-Based Security help control user access and protect the CI/CD environment.
+
+
+hashtag
+#DevOps 
+hashtag
+#Jenkins 
+hashtag
+#CICD 
+hashtag
+#Automation 
+hashtag
+#MatrixSecurity 
+hashtag
+#Cloud 
+hashtag
+#LearningInPublic 
+hashtag
+#DevOpsJourney 
+hashtag
+#AWS
+…more",true,false
+"","","https://www.linkedin.com/in/ricardolopez69?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAn7WjwBCdpzPxERjwpD0Mrwz8l2N2qRLwE","ci cd","","Mobile dev discussion",false,"","","One of the best CI/CD explanations I have found!",true,false
+"","","https://www.linkedin.com/in/savinderpuri?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAEXl48B7K1iPC43RDruKia_I4heMhY5jyA","ci cd","","Mobile dev discussion",false,"","","We do Continuous Delivery.
+Cool. One Simple question HERE.
+
+Can any developer on your team push a change to production right now 
+safely, confidently, without a permission chain?
+
+If not, you don’t have Continuous Delivery.
+
+You have automated builds.
+Maybe scheduled deployments.
+Possibly a fancy dashboard.
+
+But not CD.
+
+Here’s where most teams fool themselves:
+
+“CD means we deploy every commit.”
+No. It means every commit is deployable. 
+That’s engineering discipline.
+
+“CI = CD.”
+No. CI catches integration issues. 
+CD tests your operational maturity.
+
+“We need manual approval for safety.”
+That’s not safety. 
+That’s lack of trust in your system.
+
+“CD only works with microservices.”
+I’ve seen monoliths with stronger 
+delivery discipline than microservice sprawl.
+
+Tools are easy to buy.
+Pipelines are easy to configure.
+Culture is hard.
+
+Most teams adopted the term.
+Very few adopted the responsibility.
+
+So be honest , is your process truly continuous… or just automated?
+…more",true,false
+"","","https://www.linkedin.com/company/redblox-io/posts","ci cd","","Mobile dev discussion",false,"","","Stop Manual Errors! Automate Everything with AI in CI/CD 🔧🤖
+
+AI-powered CI/CD automates your software pipeline for faster, smarter, and error-free releases. 
+
+✅ No more deployment failures
+✅ Continuous testing & monitoring
+✅ AI-driven optimization for speed & security
+
+Embrace the future of DevOps with AI! Are you ready? 💻
+
+
+hashtag
+#AIAutomation 
+hashtag
+#CICD 
+hashtag
+#DevOps 
+hashtag
+#AITech 
+hashtag
+#CloudComputing 
+hashtag
+#MachineLearning 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#TechInnovation 
+hashtag
+#AIinDevOps 
+hashtag
+#ContinuousDeployment 
+hashtag
+#AIRevolution 
+hashtag
+#RedbloxTechnologies
+…more",true,false
+"","","https://www.linkedin.com/in/moumita-ghosh-41a44a128?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAB9judYBZ068AzQQ-6pP7v84jCec4NFDb9g","ci cd","","Mobile dev discussion",false,"","","🚀 CI/CD/CT in MLOps: Why CI/CD Alone Is Not Enough
+
+In traditional software systems, CI/CD pipelines are enough because behavior is driven by code.
+
+But ML systems depend on data, and data changes over time. That’s why MLOps introduces a third pillar: Continuous Training (CT).
+
+CI – Continuous Integration
+Ensures pipeline reliability through:
+✔️ Code tests
+✔️ Data schema checks
+✔️ Data quality validation
+✔️ Feature & training pipeline tests
+
+CD – Continuous Delivery/Deployment
+Once validated, the model is delivered or deployed based on evaluation metrics like accuracy, latency, and bias checks.
+
+CT – Continuous Training (The ML-Specific Layer)
+Models must be retrained when real-world data changes, such as:
+
+🔹 Data Drift – Input data distribution changes
+🔹 Concept Drift – Relationship between features and labels changes
+🔹 Label Drift – Target label distribution shifts
+🔹 Model Drift – Production performance degrades
+
+A typical pipeline looks like:
+
+CI -CD-CT
+
+Validate pipelines → Retrain with new data → Deploy the best model.
+
+💡 Key Insight:
+In DevOps, code is the source of truth.
+In MLOps, data is the source of truth.
+
+
+hashtag
+#MLOps 
+hashtag
+#MachineLearning 
+hashtag
+#AIEngineering 
+hashtag
+#ContinuousTraining 
+hashtag
+#DataDrift 
+hashtag
+#ModelMonitoring
+…more",true,false
+"","","https://www.linkedin.com/in/hamid-rezaeirad?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAefniEBGdS9ryuqQnT8IOuwFtqVu7Xn41k","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","In today’s fast-paced DevOps environment, maintaining consistency, reliability, and speed in deployments is essential. GitOps plays a crucial role by leveraging Git as the single source of truth for infrastructure and applications.
+
+The combination of Argo CD and Jenkins creates a powerful synergy:
+
+- Jenkins manages Continuous Integration (CI) by building, testing, and packaging applications.
+- Argo CD oversees Continuous Delivery (CD) by continuously deploying applications to Kubernetes directly from Git, ensuring version-controlled, auditable, and automated deployments.
+
+Key benefits include:
+
+- Reduced manual errors and drift between environments
+- Faster and more reliable deployments
+- Clear audit trails and rollback capabilities
+
+By embracing GitOps, teams can transition from reactive to proactive DevOps, achieving faster delivery cycles with greater confidence.
+
+Are you using GitOps in your projects? How has it transformed your CI/CD workflow? 
+
+
+hashtag
+#GitOps 
+hashtag
+#ArgoCD 
+hashtag
+#Jenkins 
+hashtag
+#DevOps 
+hashtag
+#Kubernetes 
+hashtag
+#ContinuousDelivery 
+hashtag
+#Automation 
+hashtag
+#CI_CD
+…more",true,false
+"","","https://www.linkedin.com/in/alexdigrazia?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACb757YBK_fMlPzTB7y-EEWbXfH-rJe2Nm8","ci cd","","Mentions CI tool: github actions",false,"github actions","","Hi guys!
+This is week 5 of the Coding with Callie Deploy in Public challenge where we learned how to automate our deployment work flow with GitHub Actions!
+A crucial step in DevOps is CI/CD, or Continuous Integration Continuous Development.
+To get an app up and running on a server in the cloud, lots of things need to happen to provision the server environment with all the software your app needs to run. Without a process for CI/CD automation, all of those steps would have to happen manually every time we re-deploy a new Docker image of our latest application code.
+Fortunately, with GitHub Actions, we can specify instructions in a Yaml file to be executed every time we push new code to GitHub - saving us valuable time and also removing the 'human error' factor from the CI/CD pipeline.
+Super exciting, essential DevOps tool :)
+Callie Stoscup
+…more",true,false
+"","","https://www.linkedin.com/in/ranjanabhabhat?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABFB2QYB8uW2-1qD8D_FzVxX3H9M_FXsSLY","ci cd","","Mentions CI tool: jenkins",false,"jenkins","","Reference architecture of ci cd pipeline involving terraform jenkins SAST Docker ECR Argocd Git EKS ALB & DNS",true,false
+"","","https://www.linkedin.com/company/metastability/posts","ci cd","","Mentions CI tool: jenkins, circleci, gitlab ci",false,"jenkins, circleci, gitlab ci","","🔵DevOps is a set of practices that combines 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#Dev and 
+hashtag
+#IT operations 
+hashtag
+#Ops to shorten the 
+hashtag
+#software development lifecycle while delivering features, fixes, and updates frequently in close alignment with 
+hashtag
+#business objectives. Essentially, it's about breaking down silos between 
+hashtag
+#Development and operations teams to foster 
+hashtag
+#collaboration and efficiency
+
+⚫️ Traditionally, development and operations teams operated in isolation. Developers focused on creating software, while operations teams managed infrastructure and deployment. This separation often led to friction, delays, and errors. 
+⚪️DevOps emerged as a response to these challenges. It recognizes that by bringing these teams together and adopting a shared responsibility for the entire software 
+hashtag
+#lifecycle, organizations can achieve faster time-to-market, improved software quality, and increased reliability
+
+⚫️ Core Principles of DevOps: ⚪️Collaboration, ⚪️Automation, ⚪️Continuous Integration and Continuous Delivery (CI/CD), ⚪️Monitoring and Feedback, ⚪️Infrastructure as Code (IaC)
+
+🔵 🔵Continuous Integration 
+hashtag
+#CI and Continuous Delivery 
+hashtag
+#CD are fundamental practices within the DevOps framework. They represent an automated approach to building, testing, and deploying software.
+🔵 CI is a development practice where developers frequently integrate code changes into a shared repository. Each integration is verified by an automated build and test process. This approach helps to detect integration issues early in the development cycle, reducing the time to identify and fix problems.
+⚪️Key benefits of CI: ⚪️Early detection of integration issues, ⚪️Improved code quality, ⚪️Increased developer productivity, ⚪️Reduced risk of deployment failures
+🔵Continuous Delivery 
+hashtag
+#CD is a software development practice that aims to build, test, and deploy software changes more frequently. It extends CI by automatically deploying code to various environments, such as testing, staging, and production. CD ensures that software is always in a deployable state.
+⚪️Key benefits of CD: ⚪️Faster time-to-market, ⚪️Reduced deployment failures, ⚪️Improved software quality, ⚪️Increased customer satisfaction
+🔵Numerous tools and technologies support CI/CD pipelines:
+⚪️Version control: 
+hashtag
+#Git, 
+hashtag
+#SVN
+⚪️Build tools: 
+hashtag
+#Maven, 
+hashtag
+#Gradle, 
+hashtag
+#Ant
+⚪️Continuous integration servers: 
+hashtag
+#Jenkins, 
+hashtag
+#GitLab CI/CD, 
+hashtag
+#CircleCI, 
+hashtag
+#TravisCI
+⚪️Containerization: 
+hashtag
+#Docker
+⚪️Orchestration: 
+hashtag
+#Kubernetes
+⚪️Configuration management: 
+hashtag
+#Ansible, 
+hashtag
+#Puppet, 
+hashtag
+#Chef
+⚪️Deployment tools: 
+hashtag
+#Capistrano, 
+hashtag
+#Fabric
+🔵By adopting CI/CD practices, organizations can significantly improve software development efficiency, quality, and delivery speed
+
+🔵🔵CI/CD is the linchpin of modern DevOps practices. By automating the build, test, and deployment processes, organizations can significantly accelerate software delivery, enhance product quality, and reduce the risk of errors.
+…more",true,false
+"","","https://www.linkedin.com/in/mohammad-181b86323?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAFHdpXEBxdU1tg3nrpVpZHwWZL-tthdJvnk","ci cd","","Mobile dev discussion",false,"","","CI/CD is one of those things that sounds simple in theory but takes real effort to get right.
+
+The idea is straightforward:
+
+Code → Build → Test → Deploy
+
+But making that pipeline reliable, secure, and fast takes a lot of iteration.
+Some of the biggest improvements I've seen come from small changes:
+
+• adding better pipeline visibility
+• separating plan vs deploy steps
+• improving test automation
+
+The goal is simple: reduce friction between writing code and delivering value.
+Curious how other teams structure their CI/CD pipelines.
+
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#PlatformEngineering
+…more",true,false
+"","","https://www.linkedin.com/in/gopi-chand-453a0537b?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAF3xjD8BmigUYp8yvBQ6vzQT18TQNR-iqUs","ci cd","","Mobile dev discussion",false,"","","🔁 Building CI/CD Pipelines Is Easy. Maintaining Them Is the Real Work.
+Most teams can set up a pipeline that builds and deploys code. The real challenge starts months later, when the pipeline grows complex, slow, and fragile.
+We recently inherited a CI/CD setup where builds took over 40 minutes. Multiple redundant steps, environment-specific scripts, and manual approvals were slowing everything down. Developers were waiting longer for the pipeline than they were for code reviews.
+We fixed it by simplifying stages, reusing build artifacts, and removing environment-specific logic from the pipeline. Build times dropped by more than half, and deployments became predictable again.
+CI/CD isn’t a one-time setup. It’s an evolving system that needs regular cleanup, standardization, and performance tuning.
+How often does your team review and optimize its pipelines?
+
+hashtag
+#CICD 
+hashtag
+#DevOps 
+hashtag
+#Automation 
+hashtag
+#CloudEngineering
+ 
+hashtag
+#PlatformEngineering 
+hashtag
+#SRE 
+hashtag
+#InfrastructureAsCode
+ 
+hashtag
+#SoftwareDelivery 
+hashtag
+#EngineeringLife 
+hashtag
+#Reliability
+…more",true,false
+"","","https://www.linkedin.com/in/harmanjotsinghbhatia?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADkoxzUBBUhNFqaqKD4aXdvLbnwpl--f-hU","ci cd","","Mobile dev discussion",false,"","","Have you ever wondered when the job of a developer ends in a product cycle? Have you been asked to not only worry about the code but also focus on fast-tracking the releases? What processes are triggered when you commit the final code to the VCS and make the releases available?
+
+Let us address some of these questions and envision a faster, smoother, and automated CI/CD process that can streamline the software release cycle and improve customer experience. An end-to-end platform, making your Software Liquid!
+Key points of discussion
+The need of an end-to-end CI/CD platform
+Relevance to you as a developer
+Elaborating the ""Ops"" in DevOps for a developer
+The JFrog platform to improve development experience
+
+
+
+https://lnkd.in/dC-GncBK
+…more",true,false
+"","","https://www.linkedin.com/company/systemsdigest/posts","ci cd","","Mentions CI tool: bitrise",false,"bitrise","","The latest update for 
+hashtag
+#Bitrise includes ""What millions of 
+hashtag
+#mobile builds reveal about high-performing teams: A conversation with Arpad Kun"" and ""Q&A: How Bitrise is helping Tapcart power the next wave of world-class 
+hashtag
+#ecommerce"".
+ 
+
+hashtag
+#App 
+hashtag
+#CICD 
+hashtag
+#DevOps https://lnkd.in/dAY8ynP9
+…more",true,false
+"","","https://www.linkedin.com/in/babajide-odesanya-241524223?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADgj6lEBSTijIWtbCykWn5N2LWFdNVFe4Ts","ci cd","","Mobile dev discussion",false,"","","Ever deployed code and prayed nothing breaks? 😅 
+We’ve all been there. You push to production, refresh the app, and wait nervously. That anxiety is exactly what CI/CD is meant to eliminate.
+
+So what is CI/CD really?
+CI/CD stands for:
+Continuous Integration and Continuous Delivery / Deployment.
+But forget the formal definitions for a second.
+CI/CD is simply this:
+👉 A system that checks your code automatically
+ 👉 Makes sure it works
+ 👉 And safely ships it
+Without drama.
+
+Continuous Integration (CI)
+Imagine a team of 5 developers all working on the same backend.
+Without CI:
+- Features collide
+- Bugs hide until late
+- “It worked locally” becomes the excuse
+With CI:
+- Every time someone pushes code:
+- Tests run automatically
+- The project builds automatically
+- Problems are caught immediately
+Instead of discovering chaos on release day, you fix issues in minutes.
+CI is basically your automated safety net.
+
+Continuous Delivery (CD)
+Now your code passes all tests.
+What next?
+Continuous Delivery means your application is always in a deployable state.
+You can release anytime confidently, no last-minute scrambling, no surprise failures.
+
+Continuous Deployment (the bold version)
+This is where things get interesting.
+If everything passes, the system deploys automatically, no button, no approval, no waiting. Every successful change goes live, fast, Clean and Reliable.
+
+Why does this matter in the backend development
+Backend systems power:
+- Payments
+- Authentication
+- APIs
+- Databases
+One bad deployment can affect thousands (or millions) of users.
+
+CI/CD reduces:
+- Human error
+- Stressful release days
+- Late-night hotfixes
+It turns deployments into a normal, boring routine, and boring is good.
+
+Great backend engineering isn’t just about writing good code.
+It’s about building a process that allows your team to ship safely and consistently.
+So be honest…
+Do your deployments feel calm and automated, or like a mini heart attack every time? 😄
+…more",true,false
+"","glueckkanja","https://www.linkedin.com/in/fabianbader?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAB4b6i8B2azb152YipNl2B98-E_zFVlO0W8","ci cd","","Mobile dev discussion",false,"","","1st of June 2026 will be the day your Sentinel CI/CD pipeline might break. What Microsoft calls older API versions used by Microsoft Sentinel repositories will no longer be supported.
+
+
+hashtag
+#Sentinel 
+hashtag
+#CICD 
+hashtag
+#DetectionAsCode
+…more",true,false
+"","AWS","https://www.linkedin.com/in/horovits?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAAB0C2oBtgMz7fyaw5C4sWJjxqPyYHRfgbk","ci cd","","Mobile dev discussion",false,"","","📢 𝗖𝗜/𝗖𝗗 𝗼𝗯𝘀𝗲𝗿𝘃𝗮𝗯𝗶𝗹𝗶𝘁𝘆 𝗶𝘀 𝗻𝗼𝘄 𝗼𝗳𝗳𝗶𝗰𝗶𝗮𝗹𝗹𝘆 𝗽𝗮𝗿𝘁 𝗼𝗳 𝗢𝗽𝗲𝗻𝗧𝗲𝗹𝗲𝗺𝗲𝘁𝗿𝘆'𝘀 𝘀𝗲𝗺𝗮𝗻𝘁𝗶𝗰 𝗰𝗼𝗻𝘃𝗲𝗻𝘁𝗶𝗼𝗻𝘀! 
+
+I've been talking about a common ""language"" for reporting and observing CI/CD pipelines for years, and finally, we see the first ""words"" of this language entering the ""dictionary"" of observability - the OpenTelemetry open specification.
+
+With the recent release of 
+hashtag
+#OpenTelemetry's Semantic Conventions, v1.27.0, you can find designated attributes for reporting CI/CD pipelines, under the new CICD namespace. This includes attributes for the pipeline name and run ID, the individual tasks and their respective name, type and run ID, and the deployment environment.
+
+We only founded the 
+hashtag
+#CICD 
+hashtag
+#Observability Working Group under the Cloud Native Computing Foundation (CNCF) less than half a year ago (see here: https://lnkd.in/dAmGNpHR), 
+it's great to see things moving forward. Congrats to all the contributors in the working group and the broader Semantic Conventions Special Interest Group, and a special thanks to Adriel Perkins who spearheaded it! 👏 
+
+Check out the OTel docs for more on the new attributes registry:
+https://lnkd.in/d6CBFvRx
+
+This is just the first step. If you're interested to learn more about the CI/CD observability standardization efforts, check out my blog:
+https://lnkd.in/dABTjckd
+
+And chime in on the working group discussions on slack, calls and github (see details at the end of the blog).
+…more",true,false
+"","","https://www.linkedin.com/in/elianambarbosa?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADFgz1YB2bBlG_T_BfqXU3Zsmzt7qpTDceQ","ci cd","react native","Mobile dev discussion",false,"","","🚨  VAGA NOVA/URGENTE - 100% Remoto - USD - Mobile Engineer 🚨 
+
+--> Mobile Engineer | React Native, CI/CD
+2.8k-3.8k USD/month | 3+ years of exp. | B2 English
+Candidata-se aqui: https://lnkd.in/dm3Nzjx9
+
+🌎 Países aceitos: Argentina, Brasil, Colômbia, México, Paraguai, Chile, Peru e Costa Rica
+
+📢 Processo seletivo realizado exclusivamente pelo link.
+
+
+hashtag
+#RemoteJobs 
+hashtag
+#RemoteWork 
+hashtag
+#HiringNow 
+hashtag
+#TechJobs 
+hashtag
+#MobileDeveloper 
+hashtag
+#ReactNative 
+hashtag
+#ReactNativeJobs 
+hashtag
+#MobileEngineer 
+hashtag
+#DevJobs 
+hashtag
+#TechCareers 
+hashtag
+#CICD 
+hashtag
+#SoftwareEngineer 
+hashtag
+#Developers 
+hashtag
+#LATAMJobs 
+hashtag
+#RemoteLATAM 
+hashtag
+#USDJobs 
+hashtag
+#TrabalhoRemoto 
+hashtag
+#VagasTI 
+hashtag
+#Programadores 
+hashtag
+#OportunidadeTI
+…more",true,false
+"","Nokia ACTIVE PUBLIC TRUST","https://www.linkedin.com/in/jhante-c-3b9b16173?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAClHL70BzqDtDoMNN04sJAiTSOG8FcmHnKM","ci cd","","Mobile dev discussion",false,"","","Hey! 👋 I just wrapped up a small lab exploring GitLab's powerful CI/CD capabilities. From version control to automated pipelines, GitLab has it all.
+In this lab, we delved into creating a CI/CD pipeline using GitLab's intuitive interface. From defining pipeline stages to configuring jobs, we covered it all. 💻✨
+
+
+hashtag
+#GitLab 
+hashtag
+#CICD 
+hashtag
+#Automation 
+hashtag
+#DevOps 
+hashtag
+#Productivity 
+hashtag
+#TechLab 
+hashtag
+#SoftwareDevelopment 
+hashtag
+#VersionControl 
+hashtag
+#LinkedInLearning
+…more",true,false
+"","","https://www.linkedin.com/in/divye-dwivedi-421bb7126?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAB8lUJkBYnFALq2ZhPZ9aAT3brxogjO4pyU","ci cd","","Mobile dev discussion",false,"","","CI/CD, aka Continuous Integration and Continuous Delivery, is your pipeline to get new software to users quickly and reliably. It's all about automating the build, test, and deployment process, so you can ship code faster and with fewer headaches.
+
+A typical CI/CD pipeline has several connected stages:
+
+➟ Developer commits code changes to source control (such Git)
+
+➟ CI server detects changes and triggers build 
+
+➟ Code is compiled, tested (unit, integration tests) 
+
+➟ Test results reported to developer 
+
+➟ On success, artifacts are deployed to staging environments 
+
+➟ Further testing may be done on staging before release (e.g., User Acceptance Testing, Performance Testing) 
+
+➟ CD system deploys approved changes to production (Manual approvals required in few cases)
+
+➟ Continuous Monitoring of the application in production 
+
+Please follow Divye Dwivedi for such content. 
+
+hashtag
+#DevSecOps,
+hashtag
+#SecureDevOps,
+hashtag
+#CyberSecurity,
+hashtag
+#SecurityAutomation,
+hashtag
+#CloudSecurity,
+hashtag
+#InfrastructureSecurity,
+hashtag
+#DevOpsSecurity,
+hashtag
+#ContinuousSecurity, 
+hashtag
+#SecurityByDesign, 
+hashtag
+#SecurityAsCode, 
+hashtag
+#ApplicationSecurity,
+hashtag
+#ComplianceAutomation,
+hashtag
+#CloudSecurityPosture, 
+hashtag
+#SecuringTheCloud,
+hashtag
+#AI4Security 
+hashtag
+#DevOpsSecurity 
+hashtag
+#IntelligentSecurity 
+hashtag
+#AppSecurityTesting 
+hashtag
+#CloudSecuritySolutions 
+hashtag
+#ResilientAI 
+hashtag
+#AdaptiveSecurity 
+hashtag
+#SecurityFirst 
+hashtag
+#AIDrivenSecurity 
+hashtag
+#FullStackSecurity 
+hashtag
+#ModernAppSecurity 
+hashtag
+#SecurityInTheCloud 
+hashtag
+#EmbeddedSecurity 
+hashtag
+#SmartCyberDefense 
+hashtag
+#ProactiveSecurity
+…more",true,false
+"","Jamia Hamdard
+Student at Jamia Hamdard","https://www.linkedin.com/in/abdullah-khan8888?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAADyIsF8BMkc2Vj6UlnSPoJ22tfQCZGq6zUY","ci cd","","Mentions CI tool: github actions, jenkins",false,"github actions, jenkins","","🚀 BUILDING IN PUBLIC | PART-1 |
+How I Built My First CI/CD Pipeline — And What It Taught Me
+
+A few months ago, the term ""CI/CD pipeline"" felt intimidating.
+Today, I can build one from scratch. Here's what I learned 👇
+What is a CI/CD Pipeline? It's the backbone of modern software delivery — automating the journey of code from a developer's laptop to a live production environment, without manual intervention.
+The stages I learned to build:
+🔹 Source — Code pushed to GitHub triggers everything. No push, no pipeline.
+🔹 Build — The code gets compiled, dependencies installed, Docker image created.
+🔹 Test — Automated tests run. If they fail, the pipeline stops. No broken code moves forward.
+🔹 Deploy — The image gets pushed to a registry and deployed to the target environment — whether that's a cloud server or a Kubernetes cluster.
+Tools I got hands-on with: → Git & GitHub for version control → Docker for containerization → Jenkins / GitHub Actions for automation → Kubernetes for orchestration → Linux as the foundation for everything
+The biggest lesson? CI/CD isn't just a tool — it's a mindset. Ship small, ship fast, catch errors early.
+Every failed pipeline taught me more than a successful one ever did.
+
+📌 This is Part 1 of my DevOps learning series.
+Part 2 is coming soon — Monitoring & Observability.
+I'll be covering Prometheus, Grafana, alerting, and how to actually know when your system is breaking before your users do.
+Follow along if you're on the same journey 🙌
+Drop a comment — are you also learning DevOps? Let's connect!
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#CloudComputing 
+hashtag
+#Kubernetes 
+hashtag
+#Docker 
+hashtag
+#Linux 
+hashtag
+#AWS 
+hashtag
+#LearningInPublic 
+hashtag
+#DevOpsEngineer 
+hashtag
+#CloudEngineer
+…more",true,false
+"","","https://www.linkedin.com/in/ganesh-khaire-518aa450?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAArW_-QBUSnFCtm_ghZ3oBdPV8A_3XkBHIg","ci cd","","Mentions CI tool: github actions",false,"github actions","","🚀 From CI/CD Concepts → Pipeline Running in the Cloud
+Over the last two days in my DevOps journey, something finally clicked.
+📘 Day 39 – Understanding CI/CD
+ Instead of jumping straight into tools, I focused on the fundamentals:
+Why CI/CD exists
+How pipelines work
+The difference between Continuous Integration, Continuous Delivery, and Continuous Deployment
+I also explored a real GitHub workflow from the FastAPI open-source project to see CI in action.
+⚙️ Day 40 – My First GitHub Actions Pipeline
+ Today I wrote my first GitHub Actions workflow.
+What it does:
+Triggers automatically on every push
+Runs on a cloud runner (Ubuntu)
+Executes multiple steps to inspect the repository and environment
+I even broke the pipeline intentionally to see how CI detects failures — and then fixed it.
+Seeing that first green pipeline run was a great moment.
+It’s amazing how CI/CD turns simple code pushes into automated workflows running in the cloud.
+Next step: automating builds and Docker deployments through CI/CD.
+
+hashtag
+#DevOps 
+hashtag
+#CICD 
+hashtag
+#GitHubActions 
+hashtag
+#Automation 
+hashtag
+#CloudNative 
+hashtag
+#LearningInPublic 
+hashtag
+#90DaysOfDevOps 
+hashtag
+#DevOpsKaJosh 
+hashtag
+#TrainWithShubham 
+hashtag
+#opensource
+…more",true,false
+"","Lloyds Banking Group","https://www.linkedin.com/in/krityagi?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAABZ9AhoBEGat1_ESmn3fb7jiB_khVpfC0-Y","ci cd","","Mentions CI tool: github actions, jenkins",false,"github actions, jenkins","","🌟 Excited to Share My First Blog Post on Medium! 🌟
+
+I am thrilled to announce the release of my first blog post on Medium, aimed at helping DevOps community learners and expanding my own knowledge in the process. 📚🚀
+
+In this blog post, I walk through setting up a robust CI/CD pipeline for a Node.js application using Jenkins, GitHub Actions, Terraform, and GCP Kubernetes. 
+
+Whether you're a beginner or looking to refine your skills, I hope this guide provides valuable insights and practical steps for your DevOps journey.
+…more",true,false
+"","S.M. Jaffer & Co.
+Lead Generator at S.M. Jaffer & Co.","https://www.linkedin.com/in/aaihaan-kaimkhani-96a033266?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEEk7KIBaZn_uB0ps-kwsrLe0jA6qksnWzA","ci cd","","Mobile dev discussion",false,"","","🚀 Techloyce is Hiring: *DevOps Engineer*
+
+📍 Location: *Lahore (On-site)*
+🕘 Job Type: Full-Time
+📆 Working Days: Monday – Friday
+
+Are you passionate about Linux systems, cloud infrastructure, and automation?
+
+We’re looking for a skilled DevOps Engineer (Linux Cloud) to join our growing team in Lahore and help us build, scale, and maintain secure, high-performing cloud environments.
+
+🔧 What You’ll Do:
+▪ Manage and optimize Linux-based cloud infrastructure
+▪ Design and maintain CI/CD pipelines
+▪ Automate deployments using Infrastructure as Code (IaC)
+▪ Work with Docker & Kubernetes for containerized environments
+▪ Ensure system reliability, performance, and security best practices
+
+🎯 What We’re Looking For:
+✔ Bachelor’s degree in Computer Science, Engineering, or equivalent experience
+✔ Minimum 3 years of Linux system administration (Ubuntu, CentOS, RHEL, etc.)
+✔ Hands-on experience with AWS / Azure / GCP
+✔ Strong CI/CD, automation & scripting skills
+✔ Problem-solving mindset with a proactive attitude
+If you're ready to work in a collaborative environment that values innovation, ownership, and continuous learning we’d love to hear from you!
+
+📩 Apply now: arooj.shahid@techloyce.com
+…more",true,false
