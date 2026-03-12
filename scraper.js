@@ -11,66 +11,30 @@ function requestStop() {
 const MAX_POSTS_PER_QUERY = 100;
 
 const LEAD_KEYWORDS = [
-  "react native",
-  "flutter",
-  "ci/cd",
-  "pipeline",
-  "android build",
-  "ios build",
-  "fastlane",
-  "github actions",
-  "bitrise",
-  "jenkins",
-  "deploy",
-  "testflight",
-  "play store",
-  "codepush"
+  "react native", "flutter", "ci/cd", "pipeline", "android build",
+  "ios build", "fastlane", "github actions", "bitrise", "jenkins",
+  "deploy", "testflight", "play store", "codepush"
 ];
 
 const CI_CD_PLATFORMS = [
-  "bitrise",
-  "github actions",
-  "jenkins",
-  "circleci",
-  "app center",
-  "buildkite",
-  "azure devops",
-  "gitlab ci"
+  "bitrise", "github actions", "jenkins", "circleci", "app center",
+  "buildkite", "azure devops", "gitlab ci"
 ];
 
-const MOBILE_STACK = [
-  "react native",
-  "flutter",
-  "kotlin",
-  "swift",
-  "expo"
-];
+const MOBILE_STACK = ["react native", "flutter", "kotlin", "swift", "expo"];
 
 const COMPLAINT_KEYWORDS = [
-  "slow",
-  "broken",
-  "fail",
-  "failing",
-  "frustrating",
-  "expensive",
-  "buggy",
-  "problem",
-  "issue"
+  "slow", "broken", "fail", "failing", "frustrating",
+  "expensive", "buggy", "problem", "issue"
 ];
 
 const JOB_SEEKING_KEYWORDS = [
-  "open to work",
-  "looking for a job",
-  "seeking opportunities",
-  "available for work"
+  "open to work", "looking for a job", "seeking opportunities", "available for work"
 ];
 
 const HIRING_KEYWORDS = [
-  "we're hiring",
-  "we are hiring",
-  "join our team",
-  "hiring flutter",
-  "hiring react native"
+  "we're hiring", "we are hiring", "join our team",
+  "hiring flutter", "hiring react native"
 ];
 
 if (!fs.existsSync("output")) fs.mkdirSync("output");
@@ -82,20 +46,11 @@ function detectLead(post) {
 
 function detectCIComplaint(post) {
   const text = post.text.toLowerCase();
-
-  const platformsMentioned =
-    CI_CD_PLATFORMS.filter(p => text.includes(p));
-
-  const complaints =
-    COMPLAINT_KEYWORDS.filter(c => text.includes(c));
-
-  const isComplaint =
-    platformsMentioned.length > 0 &&
-    complaints.length > 0;
-
+  const platformsMentioned = CI_CD_PLATFORMS.filter(p => text.includes(p));
+  const complaints = COMPLAINT_KEYWORDS.filter(c => text.includes(c));
   let ciComplaintText = "";
 
-  if (isComplaint) {
+  if (platformsMentioned.length && complaints.length) {
     const sentences = text.split(/[\.\n]/);
     const relevant = sentences.filter(s =>
       platformsMentioned.some(p => s.includes(p)) &&
@@ -124,9 +79,7 @@ function detectStack(post) {
 
 function extractCompany(headline) {
   if (!headline) return "";
-  const match =
-    headline.match(/@ ([^|]+)/i) ||
-    headline.match(/at ([^|]+)/i);
+  const match = headline.match(/@ ([^|]+)/i) || headline.match(/at ([^|]+)/i);
   return match ? match[1].trim() : "";
 }
 
@@ -143,8 +96,34 @@ function generateLeadReason(post, ciComplaints, hiring) {
   return "Mobile dev discussion";
 }
 
+async function expandComments(page) {
+  try {
+    for (let i = 0; i < 3; i++) {
+      const buttons = await page.$$("button");
+      for (const btn of buttons) {
+        const text = (await btn.innerText()).toLowerCase();
+        if (
+          text.includes("more comment") ||
+          text.includes("more repl") ||
+          text.includes("load more")
+        ) {
+          try {
+            await btn.click();
+            await page.waitForTimeout(1000);
+          } catch {}
+        }
+      }
+    }
+  } catch {}
+}
+
 async function runScraper(searchQueries, progress) {
   stopRequested = false;
+  progress.running = true;
+  progress.completed = 0;
+  progress.total = searchQueries.length * MAX_POSTS_PER_QUERY;
+  progress.leadsFound = 0;
+  progress.hotLeads = 0;
 
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
@@ -167,12 +146,11 @@ async function runScraper(searchQueries, progress) {
   let allPosts = [];
 
   for (const query of searchQueries) {
-
     if (stopRequested) break;
 
     progress.currentQuery = query;
-
     console.log(`Searching: ${query}`);
+
     const url = `https://www.linkedin.com/search/results/content/?keywords=${encodeURIComponent(query)}`;
     await page.goto(url);
     await page.waitForSelector("div.feed-shared-update-v2");
@@ -181,84 +159,91 @@ async function runScraper(searchQueries, progress) {
     let previousHeight = 0;
 
     while (posts.length < MAX_POSTS_PER_QUERY) {
-
       if (stopRequested) break;
 
-      const newPosts = await page.$$eval("div.feed-shared-update-v2", elements =>
-        elements.map(el => {
-          const textElement = el.querySelector(".feed-shared-update-v2__description");
-          return {
-            id: el.getAttribute("data-urn"),
-            text: textElement?.innerText || "",
-            author: el.querySelector(".update-components-actor__name")?.innerText || "",
-            headline: el.querySelector(".update-components-actor__description")?.innerText || "",
-            profileUrl: el.querySelector(".update-components-actor__meta-link")?.href || "",
-            timestamp: el.querySelector(".update-components-actor__sub-description")?.innerText || ""
-          };
-        })
+      const newPosts = await page.$$eval(
+        "div.feed-shared-update-v2",
+        elements =>
+          elements.map(el => {
+            const textElement = el.querySelector(".feed-shared-update-v2__description") ||
+                                el.querySelector(".update-components-text");
+            const linkEl = el.querySelector("a[href*='/posts/'], a[href*='/activity/']");
+            return {
+              id: el.getAttribute("data-urn") || Math.random().toString(),
+              text: textElement?.innerText || "",
+              author: el.querySelector(".update-components-actor__name")?.innerText || "",
+              headline: el.querySelector(".update-components-actor__description")?.innerText || "",
+              profileUrl: el.querySelector(".update-components-actor__meta-link")?.href || "",
+              postUrl: linkEl?.href || "",
+              timestamp: el.querySelector(".update-components-actor__sub-description")?.innerText || ""
+            };
+          })
       );
 
       posts = [...new Map([...posts, ...newPosts].map(p => [p.id, p])).values()];
+      progress.completed += newPosts.length;
 
       if (posts.length >= MAX_POSTS_PER_QUERY) break;
 
       await page.mouse.wheel(0, 3000);
-      await page.waitForTimeout(3000 + Math.random() * 3000);
+      await page.waitForTimeout(2500 + Math.random() * 3000);
 
       const height = await page.evaluate(() => document.body.scrollHeight);
       if (height === previousHeight) break;
       previousHeight = height;
     }
 
-    // Scrape comments for each post
+    // Scrape comments
     for (let post of posts) {
       if (stopRequested) break;
-
-      const postUrl = post.profileUrl;
+      if (!post.postUrl) continue;
       try {
         const postPage = await context.newPage();
-        await postPage.goto(postUrl);
-        // Expand comments section
-        await postPage.$$eval("button.comment-button", btns => btns.forEach(b => b.click()));
-        const comments = await postPage.$$eval(".comments-comment-item__main-content", els =>
-          els.map(el => el.innerText)
+        await postPage.goto(post.postUrl, { timeout: 30000 });
+        await postPage.waitForTimeout(2000);
+        await expandComments(postPage);
+        const comments = await postPage.$$eval(
+          ".comments-comment-item__main-content",
+          els => els.map(el => el.innerText)
         );
-        if (comments.length) {
-          post.text += "\n" + comments.join("\n");
-        }
+        if (comments.length) post.text += "\n" + comments.join("\n");
+        progress.completed += comments.length;
         await postPage.close();
-      } catch (err) {
-        console.log("Failed to scrape comments for post", postUrl);
-      }
+      } catch {}
     }
 
-    allPosts.push(...posts.map(post => {
-      const ciComplaints = detectCIComplaint(post);
-      const hiring = detectHiring(post);
-      const jobSeeker = detectJobSeeker(post);
-      const stack = detectStack(post);
-      const company = extractCompany(post.headline);
+    allPosts.push(
+      ...posts.map(post => {
+        const ciComplaints = detectCIComplaint(post);
+        const hiring = detectHiring(post);
+        const jobSeeker = detectJobSeeker(post);
+        const stack = detectStack(post);
+        const company = extractCompany(post.headline);
+        const isLead = detectLead(post);
+        const hotLead = ciComplaints.ciComplaintText.length > 0;
 
-      const isLead = detectLead(post);
-      const hotLead = ciComplaints.ciComplaintText.length > 0;
+        return {
+          author: post.author,
+          company,
+          profileUrl: post.profileUrl,
+          postUrl: post.postUrl,
+          searchQuery: query,
+          stack: stack.join(", "),
+          leadReason: generateLeadReason(post, ciComplaints, hiring),
+          hotLead,
+          ciTool: ciComplaints.platformsMentioned.join(", "),
+          ciComplaint: ciComplaints.ciComplaintText,
+          postText: post.text,
+          isLead,
+          jobSeeker
+        };
+      })
+    );
 
-      return {
-        author: post.author,
-        company,
-        profileUrl: post.profileUrl,
-        searchQuery: query,
-        stack: stack.join(", "),
-        leadReason: generateLeadReason(post, ciComplaints, hiring),
-        hotLead,
-        ciTool: ciComplaints.platformsMentioned.join(", "),
-        ciComplaint: ciComplaints.ciComplaintText,
-        postText: post.text,
-        isLead,
-        jobSeeker
-      };
-    }));
-
-    progress.completed += 1;
+    // Update progress counters
+    const leads = allPosts.filter(p => p.isLead && !p.jobSeeker);
+    progress.leadsFound = leads.length;
+    progress.hotLeads = allPosts.filter(p => p.isLead && p.hotLead).length;
   }
 
   const leads = allPosts.filter(p => p.isLead && !p.jobSeeker);

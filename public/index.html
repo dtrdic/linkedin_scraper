@@ -1,218 +1,153 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>LinkedIn Lead Finder</title>
-
-<style>
-
-body{
-font-family:Arial;
-padding:40px;
-max-width:800px;
-}
-
-input{
-padding:10px;
-width:300px;
-}
-
-button{
-padding:10px 15px;
-margin:5px;
-}
-
-.lead{
-border:1px solid #ddd;
-padding:15px;
-margin-top:10px;
-}
-
-.hot{
-border-left:5px solid red;
-}
-
-#spinner{
-display:none;
-margin-top:20px;
-}
-
-.loader{
-border:6px solid #f3f3f3;
-border-top:6px solid #0073b1;
-border-radius:50%;
-width:40px;
-height:40px;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
-#progressBar{
-width:100%;
-background:#eee;
-margin-top:20px;
-height:25px;
-border-radius:5px;
-overflow:hidden;
-}
-
-#progressFill{
-height:100%;
-width:0%;
-background:#0073b1;
-transition:width 0.3s;
-}
-
-#status{
-margin-top:10px;
-color:#555;
-}
-
-</style>
-
+  <title>LinkedIn Lead Finder</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input[type="text"] { width: 300px; padding: 5px; }
+    button { padding: 5px 10px; margin-left: 5px; }
+    ul { list-style: none; padding-left: 0; }
+    .lead-card { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .hot-lead { border-color: #ff4500; background-color: #fff2f0; }
+    #progressBar { width: 100%; height: 20px; background: #eee; margin: 10px 0; border-radius: 10px; overflow: hidden; }
+    #progressFill { height: 100%; width: 0%; background: #4caf50; transition: width 0.3s; }
+  </style>
 </head>
-
 <body>
 
 <h1>LinkedIn Codemagic Lead Finder</h1>
 
-<input id="queryInput" placeholder="Add search query"/>
-<button onclick="addQuery()">Add</button>
+<div>
+  <input type="text" id="queryInput" placeholder="Add search query">
+  <button id="addQueryBtn">Add</button>
+</div>
 
-<ul id="queries"></ul>
+<ul id="queriesList"></ul>
 
-<br>
-
-<button onclick="runScraper()">Start Scraping</button>
-<button onclick="stopScraper()">Stop</button>
-
-<div id="spinner">
-<div class="loader"></div>
+<div>
+  <button id="startBtn">Start Scraping</button>
+  <button id="stopBtn">Stop</button>
 </div>
 
 <div id="progressBar">
-<div id="progressFill"></div>
+  <div id="progressFill"></div>
 </div>
 
-<div id="status"></div>
-
-<div id="results"></div>
+<div id="status">Idle.</div>
+<div id="leadCount"></div>
+<div id="leadsContainer"></div>
 
 <script>
+let searchQueries = [];
+let scraping = false;
 
-let queries = [];
-let progressInterval;
+const queryInput = document.getElementById('queryInput');
+const queriesList = document.getElementById('queriesList');
+const addQueryBtn = document.getElementById('addQueryBtn');
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn');
+const statusDiv = document.getElementById('status');
+const progressFill = document.getElementById('progressFill');
+const leadsContainer = document.getElementById('leadsContainer');
+const leadCount = document.getElementById('leadCount');
 
-function addQuery(){
+let progress = { running: false, currentQuery: '', completed: 0, total: 0, leadsFound: 0, hotLeads: 0 };
 
-const input = document.getElementById("queryInput");
-
-if(!input.value) return;
-
-queries.push(input.value);
-
-const li = document.createElement("li");
-li.innerText = input.value;
-
-document.getElementById("queries").appendChild(li);
-
-input.value="";
-
+function renderQueries() {
+  queriesList.innerHTML = '';
+  searchQueries.forEach(q => {
+    const li = document.createElement('li');
+    li.textContent = q;
+    queriesList.appendChild(li);
+  });
 }
 
-async function runScraper(){
-
-document.getElementById("spinner").style.display="block";
-
-progressInterval = setInterval(updateProgress,1000);
-
-const res = await fetch("/run",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({queries})
-
+addQueryBtn.addEventListener('click', () => {
+  const val = queryInput.value.trim();
+  if (val && !searchQueries.includes(val)) {
+    searchQueries.push(val);
+    renderQueries();
+    queryInput.value = '';
+  }
 });
 
-const data = await res.json();
+function renderLeads(leads) {
+  leadsContainer.innerHTML = '';
+  leadCount.textContent = `${leads.length} leads found (${leads.filter(l => l.hotLead).length} 🔥 hot)`;
 
-clearInterval(progressInterval);
+  leads.sort((a,b)=>b.hotLead-a.hotLead).forEach(lead => {
+    const div = document.createElement('div');
+    div.className = 'lead-card';
+    if (lead.hotLead) div.classList.add('hot-lead');
 
-document.getElementById("spinner").style.display="none";
-
-renderLeads(data.leads);
-
+    div.innerHTML = `
+      <div><strong>Author:</strong> ${lead.author || '(Unknown)'}</div>
+      <div><strong>Company:</strong> ${lead.company || '-'}</div>
+      <div><strong>Hot Lead:</strong> ${lead.hotLead ? "🔥 YES" : "No"}</div>
+      <div><strong>Stack:</strong> ${lead.stack || '-'}</div>
+      <div><strong>CI Tool:</strong> ${lead.ciTool || '-'}</div>
+      <div><strong>Reason:</strong> ${lead.leadReason || '-'}</div>
+      <div><strong>Post Preview:</strong> ${lead.postText ? lead.postText.substring(0,150) + (lead.postText.length>150 ? '...' : '') : '-'}</div>
+      <div>
+        <a href="${lead.profileUrl}" target="_blank">Open Profile</a>
+        ${lead.postUrl ? `| <a href="${lead.postUrl}" target="_blank">Open Post</a>` : ''}
+      </div>
+    `;
+    leadsContainer.appendChild(div);
+  });
 }
 
-async function stopScraper(){
+async function fetchProgress() {
+  try {
+    const res = await fetch('/progress');
+    const data = await res.json();
+    progress = data;
 
-await fetch("/stop",{method:"POST"});
+    const percent = progress.total ? Math.min(Math.round(progress.completed / progress.total * 100), 100) : 0;
+    progressFill.style.width = percent + '%';
 
-clearInterval(progressInterval);
+    statusDiv.textContent = progress.running
+      ? `Scraping: ${progress.currentQuery} | ${progress.completed} scanned | ${progress.leadsFound} leads found (${progress.hotLeads} 🔥 hot)`
+      : `Stopped. ${progress.completed} scanned. ${progress.leadsFound} leads found (${progress.hotLeads} 🔥 hot)`;
 
-document.getElementById("spinner").style.display="none";
-
-document.getElementById("status").innerText="Stopped.";
-
+    if (progress.running) setTimeout(fetchProgress, 500);
+  } catch(e) { console.error(e); }
 }
 
-async function updateProgress(){
+startBtn.addEventListener('click', async () => {
+  if (!searchQueries.length) { alert('Add at least one search query'); return; }
+  if (scraping) return;
 
-const res = await fetch("/progress");
+  scraping = true;
+  progressFill.style.width = '0%';
+  progress = { running: true, currentQuery: '', completed: 0, total: searchQueries.length * 100, leadsFound: 0, hotLeads: 0 };
 
-const p = await res.json();
+  fetchProgress();
 
-if(!p.running) return;
-
-const percent = Math.round((p.completed/p.total)*100);
-
-document.getElementById("progressFill").style.width =
-percent + "%";
-
-document.getElementById("status").innerText =
-`Searching: ${p.currentQuery} (${p.completed}/${p.total})`;
-
-}
-
-function renderLeads(leads){
-
-const container = document.getElementById("results");
-
-container.innerHTML="";
-
-leads.forEach(lead=>{
-
-const div = document.createElement("div");
-
-div.className="lead";
-
-if(lead.hotLead) div.classList.add("hot");
-
-div.innerHTML=`
-
-<b>${lead.author}</b> (${lead.company || ""})<br>
-${lead.leadReason}<br>
-<a href="${lead.profileUrl}" target="_blank">Open Profile</a>
-
-`;
-
-container.appendChild(div);
-
+  try {
+    const res = await fetch('/start-scraper', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ searchQueries })
+    });
+    const leads = await res.json();
+    renderLeads(leads);
+  } catch(e) { console.error(e); }
+  finally {
+    scraping = false;
+    statusDiv.textContent = 'Stopped.';
+    progressFill.style.width = '0%';
+  }
 });
 
-}
+stopBtn.addEventListener('click', async () => {
+  if (!scraping) return;
+  await fetch('/stop-scraper', { method: 'POST' });
+  statusDiv.textContent = 'Stopping...';
+});
 
+renderQueries();
 </script>
 
 </body>
-
 </html>
