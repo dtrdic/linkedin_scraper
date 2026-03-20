@@ -11,6 +11,7 @@
     .hot-lead { border-color: #ff4500; background-color: #fff2f0; }
     #progressBar { width: 100%; height: 20px; background: #eee; margin: 10px 0; border-radius: 10px; overflow: hidden; }
     #progressFill { height: 100%; width: 0%; background: #4caf50; transition: width 0.3s; }
+    #status { margin-top: 10px; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -72,29 +73,41 @@ addQueryBtn.addEventListener('click', () => {
 });
 
 function renderLeads(leads) {
+  if (!Array.isArray(leads)) {
+    console.error("renderLeads received invalid data:", leads);
+    statusDiv.textContent = "❌ Invalid data received from server.";
+    return;
+  }
+
   leadsContainer.innerHTML = '';
   leadCount.textContent = `${leads.length} leads found (${leads.filter(l => l.hotLead).length} 🔥 hot)`;
 
-  leads.sort((a,b)=>b.hotLead-a.hotLead).forEach(lead => {
-    const div = document.createElement('div');
-    div.className = 'lead-card';
-    if (lead.hotLead) div.classList.add('hot-lead');
+  leads
+    .sort((a, b) => (b.hotLead === true) - (a.hotLead === true))
+    .forEach(lead => {
+      const div = document.createElement('div');
+      div.className = 'lead-card';
+      if (lead.hotLead) div.classList.add('hot-lead');
 
-    div.innerHTML = `
-      <div><strong>Author:</strong> ${lead.author || '(Unknown)'}</div>
-      <div><strong>Company:</strong> ${lead.company || '-'}</div>
-      <div><strong>Hot Lead:</strong> ${lead.hotLead ? "🔥 YES" : "No"}</div>
-      <div><strong>Stack:</strong> ${lead.stack || '-'}</div>
-      <div><strong>CI Tool:</strong> ${lead.ciTool || '-'}</div>
-      <div><strong>Reason:</strong> ${lead.leadReason || '-'}</div>
-      <div><strong>Post Preview:</strong> ${lead.postText ? lead.postText.substring(0,150) + (lead.postText.length>150 ? '...' : '') : '-'}</div>
-      <div>
-        <a href="${lead.profileUrl}" target="_blank">Open Profile</a>
-        ${lead.postUrl ? `| <a href="${lead.postUrl}" target="_blank">Open Post</a>` : ''}
-      </div>
-    `;
-    leadsContainer.appendChild(div);
-  });
+      div.innerHTML = `
+        <div><strong>Author:</strong> ${lead.author || '(Unknown)'}</div>
+        <div><strong>Company:</strong> ${lead.company || '-'}</div>
+        <div><strong>Hot Lead:</strong> ${lead.hotLead ? "🔥 YES" : "No"}</div>
+        <div><strong>Stack:</strong> ${lead.stack || '-'}</div>
+        <div><strong>CI Tool:</strong> ${lead.ciTool || '-'}</div>
+        <div><strong>Reason:</strong> ${lead.leadReason || '-'}</div>
+        <div><strong>Post Preview:</strong> ${
+          lead.postText
+            ? lead.postText.substring(0, 150) + (lead.postText.length > 150 ? '...' : '')
+            : '-'
+        }</div>
+        <div>
+          <a href="${lead.profileUrl}" target="_blank">Open Profile</a>
+          ${lead.postUrl ? `| <a href="${lead.postUrl}" target="_blank">Open Post</a>` : ''}
+        </div>
+      `;
+      leadsContainer.appendChild(div);
+    });
 }
 
 async function fetchProgress() {
@@ -103,40 +116,66 @@ async function fetchProgress() {
     const data = await res.json();
     progress = data;
 
-    const percent = progress.total ? Math.min(Math.round(progress.completed / progress.total * 100), 100) : 0;
+    const percent = progress.total
+      ? Math.min(Math.round(progress.completed / progress.total * 100), 100)
+      : 0;
+
     progressFill.style.width = percent + '%';
 
     statusDiv.textContent = progress.running
-      ? `Scraping: ${progress.currentQuery} | ${progress.completed} scanned | ${progress.leadsFound} leads found (${progress.hotLeads} 🔥 hot)`
-      : `Stopped. ${progress.completed} scanned. ${progress.leadsFound} leads found (${progress.hotLeads} 🔥 hot)`;
+      ? `Scraping: ${progress.currentQuery} | ${progress.completed} scanned | ${progress.leadsFound} leads (${progress.hotLeads} 🔥)`
+      : `Stopped. ${progress.completed} scanned. ${progress.leadsFound} leads (${progress.hotLeads} 🔥)`;
 
     if (progress.running) setTimeout(fetchProgress, 500);
-  } catch(e) { console.error(e); }
+  } catch (e) {
+    console.error("Progress fetch failed:", e);
+  }
 }
 
 startBtn.addEventListener('click', async () => {
-  if (!searchQueries.length) { alert('Add at least one search query'); return; }
+  if (!searchQueries.length) {
+    alert('Add at least one search query');
+    return;
+  }
+
   if (scraping) return;
 
   scraping = true;
   progressFill.style.width = '0%';
-  progress = { running: true, currentQuery: '', completed: 0, total: searchQueries.length * 100, leadsFound: 0, hotLeads: 0 };
+  statusDiv.textContent = "Starting scraper...";
 
   fetchProgress();
 
   try {
     const res = await fetch('/start-scraper', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ searchQueries })
     });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      console.error("Server error:", err);
+      statusDiv.textContent = "❌ Scraper failed. Check server logs.";
+      alert("Server error. Check backend logs.");
+      return;
+    }
+
     const leads = await res.json();
+
+    if (!Array.isArray(leads)) {
+      console.error("Invalid response:", leads);
+      statusDiv.textContent = "❌ Invalid response from server.";
+      return;
+    }
+
     renderLeads(leads);
-  } catch(e) { console.error(e); }
-  finally {
+
+  } catch (e) {
+    console.error("Request failed:", e);
+    statusDiv.textContent = "❌ Network or server error.";
+  } finally {
     scraping = false;
-    statusDiv.textContent = 'Stopped.';
-    progressFill.style.width = '0%';
   }
 });
 
